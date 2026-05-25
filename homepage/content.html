@@ -1,3 +1,120 @@
+<!-- ══ AEO: SCHEMA JSON-LD ══════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["MedicalBusiness", "Dermatology"],
+      "@id": "https://www.dermaforyou.com/#clinic",
+      "name": "Dermaforyou",
+      "alternateName": "Dermaforyou Talavera",
+      "url": "https://www.dermaforyou.com",
+      "description": "Clínica dermatológica especializada en flacidez facial, neuromoduladores, ácido hialurónico, hilos tensores y láser CO2 e IPL en Talavera de la Reina. Técnica exclusiva Triángulo Armónico® de la Dra. Carmen Galera.",
+      "telephone": "+34601370561",
+      "email": "carmengalera@dermaforyou.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Talavera de la Reina",
+        "addressRegion": "Toledo",
+        "postalCode": "45600",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "39.9633",
+        "longitude": "-4.8304"
+      },
+      "priceRange": "€€€",
+      "medicalSpecialty": "Dermatology",
+      "currenciesAccepted": "EUR",
+      "paymentAccepted": "Efectivo, Tarjeta",
+      "sameAs": [
+        "https://www.instagram.com/carmengalera.dermatologa/"
+      ],
+      "availableService": [
+        { "@type": "MedicalTherapy", "name": "Tratamiento flacidez facial", "url": "https://www.dermaforyou.com/flacidez-facial/" },
+        { "@type": "MedicalTherapy", "name": "Neuromoduladores", "url": "https://www.dermaforyou.com/tratamiento-neuromodulacion-talavera/" },
+        { "@type": "MedicalTherapy", "name": "Ácido Hialurónico", "url": "https://www.dermaforyou.com/triangulo-armonico-para-mejorar-la-flacidez/" },
+        { "@type": "MedicalTherapy", "name": "Hilos Tensores PDO", "url": "https://www.dermaforyou.com/hilos-faciales-de-pdo/" },
+        { "@type": "MedicalTherapy", "name": "Láser CO2 e IPL", "url": "https://www.dermaforyou.com/terapia-ipl-laser-qswitched-eliminacion-de-manchas-talavera/" },
+        { "@type": "MedicalTherapy", "name": "Tratamiento acné y rosácea", "url": "https://www.dermaforyou.com/tratamiento-acne-talavera/" }
+      ]
+    },
+    {
+      "@type": "Physician",
+      "@id": "https://www.dermaforyou.com/#physician",
+      "name": "Dra. Carmen Galera",
+      "jobTitle": "Médico Especialista en Dermatología Estética",
+      "description": "Licenciada en Medicina y Cirugía por la Universidad de Salamanca. MIR en Dermatología, Hospital Universitario 12 de Octubre (Madrid). Más de 20 años de experiencia. Directora médica de Dermaforyou. Creadora del método Skin Layer y la técnica Triángulo Armónico®.",
+      "worksFor": { "@id": "https://www.dermaforyou.com/#clinic" },
+      "medicalSpecialty": "Dermatology",
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Universidad de Salamanca"
+      },
+      "affiliation": [
+        { "@type": "MedicalOrganization", "name": "Academia Española de Dermatología y Venereología (AEDV)" },
+        { "@type": "Hospital", "name": "Hospital Universitario 12 de Octubre, Madrid" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.dermaforyou.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué es el Triángulo Armónico® y en qué consiste?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El Triángulo Armónico® es la técnica exclusiva de la Dra. Carmen Galera para tratar la flacidez facial. Consiste en trabajar tres puntos clave del rostro de forma simultánea para recuperar la estructura, la tensión y la armonía natural, sin añadir volumen innecesario."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Son dolorosos los tratamientos estéticos en Dermaforyou?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La mayoría de los tratamientos son muy bien tolerados. Aplicamos anestesia tópica o local cuando es necesario para máxima comodidad. La incomodidad es mínima y depende de la sensibilidad de cada paciente."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuándo se ven los resultados de los tratamientos de flacidez facial?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Los primeros resultados se aprecian entre las 2 y 4 semanas tras el tratamiento. Los resultados completos se desarrollan progresivamente en 2 a 3 meses. La duración varía entre 12 y 24 meses según el tratamiento y el estilo de vida de la paciente."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué diferencia hay entre neuromoduladores y ácido hialurónico?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Los neuromoduladores actúan sobre los músculos faciales reduciendo su contracción, suavizando líneas de expresión dinámicas (frente, entrecejo, patas de gallo). El ácido hialurónico es un relleno que restaura volumen e hidrata en profundidad. En Dermaforyou combinamos ambos cuando la paciente necesita abordar tanto la relajación muscular como la pérdida de volumen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Dónde está la clínica Dermaforyou y cómo pido cita?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dermaforyou está en Talavera de la Reina (Toledo). Puedes solicitar cita por la web, por WhatsApp en el +34 601 370 561 o enviando un email a carmengalera@dermaforyou.com. También realizamos consultas online para pacientes que no pueden desplazarse."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta una consulta en Dermaforyou?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La consulta de valoración con la Dra. Carmen Galera permite evaluar tu caso de forma personalizada y diseñar el plan de tratamiento más adecuado. Puedes consultar precios actualizados contactando con la clínica directamente."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
 <section class="hero">
   <div class="container">
     <div class="hero-content">
@@ -298,6 +415,78 @@
   </div>
 </section>
 
+<section class="faq" id="preguntas">
+  <div class="container">
+    <div class="faq-inner">
+      <div class="section-label">Preguntas frecuentes</div>
+      <h2 class="section-title anim-up">Lo que más nos <em>preguntan</em></h2>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            ¿Qué es el Triángulo Armónico® y en qué consiste?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" role="region">
+            <p>El Triángulo Armónico® es la técnica exclusiva de la Dra. Carmen Galera para tratar la flacidez facial. Consiste en trabajar tres puntos clave del rostro de forma simultánea para recuperar la estructura, la tensión y la armonía natural. A diferencia de otros enfoques, no añade volumen innecesario sino que reposiciona y tensa los tejidos desde dentro.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            ¿Son dolorosos los tratamientos estéticos en Dermaforyou?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" role="region">
+            <p>La mayoría de nuestros tratamientos son muy bien tolerados. Aplicamos anestesia tópica o local cuando es necesario para que el procedimiento sea lo más cómodo posible. Las pacientes describen la sensación como mínima. La incomodidad depende de la sensibilidad de cada persona y del tratamiento específico.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            ¿Cuándo se ven los resultados de los tratamientos de flacidez facial?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" role="region">
+            <p>Los primeros resultados se aprecian entre las 2 y 4 semanas tras el tratamiento. Los resultados completos se desarrollan progresivamente durante 2 a 3 meses, a medida que el organismo genera colágeno y se adapta. La duración varía entre 12 y 24 meses dependiendo del tratamiento y del estilo de vida de la paciente.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            ¿Qué diferencia hay entre neuromoduladores y ácido hialurónico?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" role="region">
+            <p>Los neuromoduladores actúan sobre los músculos faciales reduciendo su contracción, lo que suaviza las líneas de expresión dinámicas (frente, entrecejo, patas de gallo). El ácido hialurónico es un relleno que restaura volumen, hidrata en profundidad y redefine contornos. En Dermaforyou combinamos ambos tratamientos cuando la paciente necesita abordar tanto la relajación muscular como la pérdida de volumen.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            ¿Dónde está la clínica Dermaforyou y cómo pido cita?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" role="region">
+            <p>Dermaforyou está en Talavera de la Reina (Toledo). Puedes solicitar cita a través de nuestra web, por WhatsApp en el +34 601 370 561 o enviando un email a carmengalera@dermaforyou.com. También atendemos consultas online para pacientes que no pueden desplazarse.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            ¿Cuánto cuesta una consulta en Dermaforyou?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" role="region">
+            <p>La consulta de valoración con la Dra. Carmen Galera permite evaluar tu caso de forma personalizada y diseñar el plan de tratamiento más adecuado. Puedes consultar precios actualizados contactando directamente con la clínica por WhatsApp o email.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="cta-final" id="contacto">
   <div class="container">
     <div class="cta-final-inner">
@@ -327,6 +516,25 @@
   document.querySelectorAll('.anim-up,.anim-down,.anim-left,.anim-right,.anim-scale').forEach(function(el){
     el.style.opacity='0';
     obs.observe(el);
+  });
+
+  /* ── FAQ ACORDEÓN ─────────────────────────────────────────────── */
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var isOpen = btn.getAttribute('aria-expanded') === 'true';
+      // Cerrar todos
+      document.querySelectorAll('.faq-question').forEach(function(b) {
+        b.setAttribute('aria-expanded', 'false');
+        var ans = b.nextElementSibling;
+        if (ans) ans.classList.remove('open');
+      });
+      // Abrir el pulsado si estaba cerrado
+      if (!isOpen) {
+        btn.setAttribute('aria-expanded', 'true');
+        var ans = btn.nextElementSibling;
+        if (ans) ans.classList.add('open');
+      }
+    });
   });
 
   /* ── BLOG DINÁMICO — últimos 3 posts de WordPress ───────────── */

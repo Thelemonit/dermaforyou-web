@@ -413,26 +413,165 @@ body.page-id-1100 a  { text-decoration: none; color: inherit; }
 .btn-white:hover { transform:translateY(-4px); box-shadow:0 16px 64px rgba(0,0,0,.3); }
 .cta-contact { margin-top:32px; font-size:13px; color:rgba(255,255,255,.5); }
 
-/* ══ RESPONSIVE ══════════════════════════════════════════════════ */
+/* FAQ ═══════════════════════════════════════════════════════════ */
+.faq { padding:140px 0; background:var(--white); }
+.faq-inner { max-width:800px; margin:0 auto; text-align:center; }
+.faq-list  { margin-top:60px; text-align:left; }
+.faq-item  { border-bottom:1px solid var(--border); }
+.faq-item:first-child { border-top:1px solid var(--border); }
+.faq-question {
+  width:100%; text-align:left; background:none; border:none; cursor:pointer;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:28px 0; gap:20px;
+  font-family:'Lora',serif; font-size:17px; font-weight:500;
+  color:var(--text); transition:color .3s ease; line-height:1.4;
+}
+.faq-question:hover,
+.faq-question[aria-expanded="true"] { color:var(--deep-rose); }
+.faq-icon {
+  font-size:22px; font-weight:300; color:var(--deep-rose); flex-shrink:0;
+  transition:transform .35s cubic-bezier(.25,.8,.25,1); line-height:1;
+  width:28px; height:28px; border-radius:50%;
+  border:1.5px solid rgba(192,60,92,.2);
+  display:flex; align-items:center; justify-content:center;
+}
+.faq-question[aria-expanded="true"] .faq-icon { transform:rotate(45deg); background:var(--deep-rose); color:#fff; border-color:var(--deep-rose); }
+.faq-answer {
+  overflow:hidden; max-height:0;
+  transition:max-height .4s cubic-bezier(.25,.8,.25,1), padding .3s ease;
+}
+.faq-answer.open { max-height:400px; }
+.faq-answer p { padding-bottom:28px; font-size:15px; color:var(--gray); line-height:1.85; }
+
+/* ══ RESPONSIVE — TABLET (≤1200px) ══════════════════════════════ */
 @media (max-width: 1200px) {
-  .hero-content, .specialty-content, .method-content, .bio-grid { grid-template-columns:1fr; gap:80px; }
-  .hero h1       { font-size:48px !important; }
+  .container { padding:0 24px; }
+  .hero-content, .specialty-content, .method-content, .bio-grid {
+    grid-template-columns:1fr; gap:60px;
+  }
+  .hero        { padding:100px 0 80px; }
+  .specialty, .triangle, .treatments, .testimonials,
+  .method, .blog, .bio, .faq, .cta-final { padding:100px 0; }
+  .hero h1       { font-size:52px !important; }
   .section-title { font-size:40px !important; }
   .triangle h2   { font-size:44px !important; }
   .cta-final h2  { font-size:44px !important; }
-  .treatments-grid, .steps-container, .testimonials-grid, .blog-grid { grid-template-columns:1fr 1fr; }
+  .treatments-grid, .steps-container, .testimonials-grid, .blog-grid {
+    grid-template-columns:1fr 1fr;
+  }
+  .hero-image-wrapper { width:380px; height:480px; margin:0 auto; }
+  .badge-accent { width:130px; height:130px; bottom:-10px; right:-10px; }
+  .badge-accent-number { font-size:36px; }
 }
+
+/* ══ RESPONSIVE — MOBILE (≤768px) ════════════════════════════════ */
 @media (max-width: 768px) {
-  .hero          { padding:80px 0 60px; min-height:auto; }
-  .hero h1       { font-size:36px !important; }
-  .stat-box      { display:none; }
-  .hero-image-wrapper { width:280px; height:360px; }
-  .section-title { font-size:32px !important; }
-  .triangle h2   { font-size:32px !important; }
-  .cta-final h2  { font-size:32px !important; }
-  .treatments-grid, .steps-container, .testimonials-grid, .blog-grid { grid-template-columns:1fr; }
-  .blog-header   { flex-direction:column; align-items:flex-start; }
-  .hero-ctas     { flex-direction:column; align-items:flex-start; }
+  .container { padding:0 20px; }
+
+  /* HERO */
+  .hero { padding:80px 0 60px; min-height:auto; }
+  .hero-content { gap:40px; }
+  .hero h1 { font-size:36px !important; letter-spacing:-0.5px !important; }
+  .hero-label { font-size:10px; letter-spacing:1.5px; margin-bottom:16px; }
+  .hero-subtitle { font-size:15px; line-height:1.75; margin-bottom:32px; }
+  .hero-ctas { flex-direction:column; align-items:stretch; }
+  .hero-ctas .btn-primary,
+  .hero-ctas .btn-secondary { width:100%; justify-content:center; padding:15px 24px; font-size:14px; }
+  .stat-box { display:none; }
+  .hero-image-wrapper { width:260px; height:330px; margin:0 auto; }
+  .hero-visual { justify-content:center; }
+
+  /* SECCIONES — padding general */
+  .specialty, .triangle, .treatments, .testimonials,
+  .method, .blog, .bio, .faq, .cta-final { padding:72px 0; }
+  .trust-marquee { padding:36px 0; }
+  .marquee { gap:32px; }
+  .trust-item { font-size:13px; }
+
+  /* TIPOGRAFÍA */
+  .section-title  { font-size:28px !important; margin-bottom:16px !important; letter-spacing:-0.3px !important; }
+  .section-text   { font-size:14px; }
+  .section-label  { font-size:10px; }
+  .treatments-header { margin-bottom:48px; }
+  .testimonials-header, .faq-inner { margin-bottom:0; }
+
+  /* SPECIALTY */
+  .specialty-content { gap:40px; }
+  .specialty-img { height:280px; border-radius:16px; }
+  .badge-accent  { display:none; }
+  .features-grid { grid-template-columns:1fr; gap:10px; margin-top:24px; }
+  .feature-item  { padding:14px; }
+
+  /* TRIÁNGULO */
+  .triangle h2 { font-size:28px !important; }
+  .triangle-subtitle { font-size:14px; }
+  .tri-label { font-size:10px; padding:8px 20px; margin-bottom:20px; }
+  .triangle-header { margin-bottom:40px; }
+  .steps-container { grid-template-columns:1fr; gap:14px; margin-top:32px; }
+  .step-card { padding:28px 24px; border-radius:18px; }
+  .step-card:hover { transform:none; }
+  .step-number { font-size:36px; margin-bottom:16px; }
+
+  /* TRATAMIENTOS */
+  .treatments-grid { grid-template-columns:1fr; gap:14px; }
+  .treat-card { height:300px; border-radius:18px; }
+  .treat-content { padding:24px; }
+  .treat-card h3 { font-size:20px !important; }
+  .treat-card p  { font-size:12px; }
+
+  /* TESTIMONIOS */
+  .testimonials-grid { grid-template-columns:1fr; gap:14px; }
+  .test-card { padding:28px 22px; border-radius:16px; }
+  .test-card:hover { transform:none; }
+  .test-quote { font-size:40px; margin-bottom:10px; }
+  .test-text  { font-size:14px; margin-bottom:20px; }
+
+  /* MÉTODO */
+  .method-content { gap:40px; }
+  .phase { padding:20px; gap:16px; }
+  .phase:hover { transform:none; }
+  .phase-num { width:40px; height:40px; border-radius:10px; font-size:14px; }
+  .phase h4 { font-size:14px !important; }
+  .phase p  { font-size:12px; }
+  .method-phases { gap:12px; }
+
+  /* BLOG */
+  .blog-header { flex-direction:column; align-items:flex-start; gap:20px; margin-bottom:40px; }
+  .blog-grid   { grid-template-columns:1fr; gap:14px; }
+  .blog-body   { padding:22px; }
+  .blog-card h3 { font-size:16px !important; }
+  .blog-desc   { font-size:13px; }
+  .blog-card:hover { transform:none; }
+
+  /* FAQ */
+  .faq { padding:72px 0; }
+  .faq-list { margin-top:40px; }
+  .faq-question { font-size:15px; padding:22px 0; }
+  .faq-answer p { font-size:14px; }
+
+  /* BIO */
+  .bio-grid { gap:36px; }
+  .bio-image { height:320px; border-radius:18px; }
+  .bio-creds { gap:8px; margin-top:24px; }
+  .bio-cred  { font-size:11px; padding:8px 14px; }
+
+  /* CTA FINAL */
+  .cta-final h2 { font-size:28px !important; letter-spacing:-0.3px; }
+  .cta-final p  { font-size:14px; margin-bottom:32px; }
+  .btn-white { padding:15px 32px; font-size:14px; width:100%; justify-content:center; }
+  .cta-contact { font-size:11px; }
+}
+
+/* ══ RESPONSIVE — SMALL MOBILE (≤400px) ══════════════════════════ */
+@media (max-width: 400px) {
+  .container { padding:0 16px; }
+  .hero h1 { font-size:30px !important; }
+  .hero-image-wrapper { width:220px; height:280px; }
+  .section-title { font-size:24px !important; }
+  .triangle h2  { font-size:24px !important; }
+  .cta-final h2 { font-size:24px !important; }
+  .treat-card   { height:260px; }
+  .faq-question { font-size:14px; }
 }
 
 /* ══ WORDPRESS FULL-WIDTH OVERRIDE (page-id-1100) ══════════════ */
