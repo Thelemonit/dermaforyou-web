@@ -414,35 +414,50 @@ body.page-id-1100 a  { text-decoration: none; color: inherit; }
 .btn-white:hover { transform:translateY(-4px); box-shadow:0 16px 64px rgba(0,0,0,.3); }
 .cta-contact { margin-top:32px; font-size:13px; color:rgba(255,255,255,.5); }
 
-/* FAQ ═══════════════════════════════════════════════════════════ */
+/* FAQ — GRID DE TARJETAS ════════════════════════════════════════ */
 .faq { padding:140px 0; background:var(--white); }
-.faq-inner { max-width:800px; margin:0 auto; text-align:center; }
-.faq-list  { margin-top:60px; text-align:left; }
-.faq-item  { border-bottom:1px solid var(--border); }
-.faq-item:first-child { border-top:1px solid var(--border); }
-.faq-question {
-  width:100%; text-align:left; background:none; border:none; cursor:pointer;
-  display:flex; justify-content:space-between; align-items:center;
-  padding:28px 0; gap:20px;
-  font-family:'Lora',serif; font-size:17px; font-weight:500;
-  color:var(--text); transition:color .3s ease; line-height:1.4;
+.faq-header { text-align:center; max-width:640px; margin:0 auto 72px; }
+.faq-cards {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
 }
-.faq-question:hover,
-.faq-question[aria-expanded="true"] { color:var(--deep-rose); }
-.faq-icon {
-  font-size:22px; font-weight:300; color:var(--deep-rose); flex-shrink:0;
-  transition:transform .35s cubic-bezier(.25,.8,.25,1); line-height:1;
-  width:28px; height:28px; border-radius:50%;
-  border:1.5px solid rgba(192,60,92,.2);
+.faq-card {
+  background:var(--cream);
+  border-radius:20px;
+  padding:32px 28px;
+  border:1px solid transparent;
+  transition:all .4s cubic-bezier(.25,.8,.25,1);
+  position:relative; overflow:hidden;
+}
+.faq-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:3px;
+  background:linear-gradient(90deg, var(--deep-rose), var(--soft-pink));
+  transform:scaleX(0); transform-origin:left;
+  transition:transform .4s cubic-bezier(.25,.8,.25,1);
+}
+.faq-card:hover {
+  border-color:rgba(192,60,92,.1);
+  background:var(--white);
+  box-shadow:0 16px 48px rgba(0,0,0,.07);
+  transform:translateY(-6px);
+}
+.faq-card:hover::before { transform:scaleX(1); }
+.faq-card-icon {
+  width:44px; height:44px; border-radius:14px;
+  background:rgba(192,60,92,.07);
   display:flex; align-items:center; justify-content:center;
+  font-size:20px; margin-bottom:20px;
+  transition:background .3s ease;
 }
-.faq-question[aria-expanded="true"] .faq-icon { transform:rotate(45deg); background:var(--deep-rose); color:#fff; border-color:var(--deep-rose); }
-.faq-answer {
-  overflow:hidden; max-height:0;
-  transition:max-height .4s cubic-bezier(.25,.8,.25,1), padding .3s ease;
+.faq-card:hover .faq-card-icon { background:rgba(192,60,92,.12); }
+.faq-card-q {
+  font-size:15px; font-weight:600; color:var(--dark);
+  margin-bottom:12px; line-height:1.45;
 }
-.faq-answer.open { max-height:400px; }
-.faq-answer p { padding-bottom:28px; font-size:15px; color:var(--gray); line-height:1.85; }
+.faq-card-a {
+  font-size:13px; color:var(--gray); line-height:1.8;
+}
 
 /* ══ RESPONSIVE — TABLET (≤1200px) ══════════════════════════════ */
 @media (max-width: 1200px) {
@@ -460,6 +475,7 @@ body.page-id-1100 a  { text-decoration: none; color: inherit; }
   .treatments-grid, .steps-container, .testimonials-grid, .blog-grid {
     grid-template-columns:1fr 1fr;
   }
+  .faq-cards { grid-template-columns:1fr 1fr; }
   .hero-image-wrapper { width:380px; height:480px; margin:0 auto; }
   .badge-accent { width:130px; height:130px; bottom:-10px; right:-10px; }
   .badge-accent-number { font-size:36px; }
@@ -550,9 +566,13 @@ body.page-id-1100 a  { text-decoration: none; color: inherit; }
 
   /* FAQ */
   .faq { padding:72px 0; }
-  .faq-list { margin-top:40px; }
-  .faq-question { font-size:15px; padding:22px 0; }
-  .faq-answer p { font-size:14px; }
+  .faq-header { margin-bottom:40px; }
+  .faq-cards { grid-template-columns:1fr; gap:14px; }
+  .faq-card { padding:24px 22px; border-radius:16px; }
+  .faq-card:hover { transform:none; }
+  .faq-card-icon { width:38px; height:38px; font-size:18px; margin-bottom:14px; }
+  .faq-card-q { font-size:14px; }
+  .faq-card-a { font-size:13px; }
 
   /* BIO */
   .bio-grid { gap:36px; }

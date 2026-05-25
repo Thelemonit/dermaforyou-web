@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dermaforyou — Dra. Carmen Galera | Dermatóloga estética Talavera de la Reina</title>
   <meta name="description" content="Clínica dermatológica especializada en flacidez facial con la técnica exclusiva Triángulo Armónico®. Neuromoduladores, ácido hialurónico, hilos tensores y láser en Talavera de la Reina.">
-  <meta name="keywords" content="dermatóloga Talavera, flacidez facial, neuromoduladores, ácido hialurónico, hilos tensores, láser CO2, acné, Dra Carmen Galera, Dermaforyou">
   <meta property="og:title" content="Dermaforyou — Dra. Carmen Galera | Dermatóloga estética Talavera">
   <meta property="og:description" content="Especialistas en flacidez facial con la técnica exclusiva Triángulo Armónico®. Resultados naturales con rigor médico en Talavera de la Reina.">
   <meta property="og:url" content="https://www.dermaforyou.com">
@@ -429,35 +428,50 @@ body.page-id-1100 a  { text-decoration: none; color: inherit; }
 .btn-white:hover { transform:translateY(-4px); box-shadow:0 16px 64px rgba(0,0,0,.3); }
 .cta-contact { margin-top:32px; font-size:13px; color:rgba(255,255,255,.5); }
 
-/* FAQ ═══════════════════════════════════════════════════════════ */
+/* FAQ — GRID DE TARJETAS ════════════════════════════════════════ */
 .faq { padding:140px 0; background:var(--white); }
-.faq-inner { max-width:800px; margin:0 auto; text-align:center; }
-.faq-list  { margin-top:60px; text-align:left; }
-.faq-item  { border-bottom:1px solid var(--border); }
-.faq-item:first-child { border-top:1px solid var(--border); }
-.faq-question {
-  width:100%; text-align:left; background:none; border:none; cursor:pointer;
-  display:flex; justify-content:space-between; align-items:center;
-  padding:28px 0; gap:20px;
-  font-family:'Lora',serif; font-size:17px; font-weight:500;
-  color:var(--text); transition:color .3s ease; line-height:1.4;
+.faq-header { text-align:center; max-width:640px; margin:0 auto 72px; }
+.faq-cards {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
 }
-.faq-question:hover,
-.faq-question[aria-expanded="true"] { color:var(--deep-rose); }
-.faq-icon {
-  font-size:22px; font-weight:300; color:var(--deep-rose); flex-shrink:0;
-  transition:transform .35s cubic-bezier(.25,.8,.25,1); line-height:1;
-  width:28px; height:28px; border-radius:50%;
-  border:1.5px solid rgba(192,60,92,.2);
+.faq-card {
+  background:var(--cream);
+  border-radius:20px;
+  padding:32px 28px;
+  border:1px solid transparent;
+  transition:all .4s cubic-bezier(.25,.8,.25,1);
+  position:relative; overflow:hidden;
+}
+.faq-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:3px;
+  background:linear-gradient(90deg, var(--deep-rose), var(--soft-pink));
+  transform:scaleX(0); transform-origin:left;
+  transition:transform .4s cubic-bezier(.25,.8,.25,1);
+}
+.faq-card:hover {
+  border-color:rgba(192,60,92,.1);
+  background:var(--white);
+  box-shadow:0 16px 48px rgba(0,0,0,.07);
+  transform:translateY(-6px);
+}
+.faq-card:hover::before { transform:scaleX(1); }
+.faq-card-icon {
+  width:44px; height:44px; border-radius:14px;
+  background:rgba(192,60,92,.07);
   display:flex; align-items:center; justify-content:center;
+  font-size:20px; margin-bottom:20px;
+  transition:background .3s ease;
 }
-.faq-question[aria-expanded="true"] .faq-icon { transform:rotate(45deg); background:var(--deep-rose); color:#fff; border-color:var(--deep-rose); }
-.faq-answer {
-  overflow:hidden; max-height:0;
-  transition:max-height .4s cubic-bezier(.25,.8,.25,1), padding .3s ease;
+.faq-card:hover .faq-card-icon { background:rgba(192,60,92,.12); }
+.faq-card-q {
+  font-size:15px; font-weight:600; color:var(--dark);
+  margin-bottom:12px; line-height:1.45;
 }
-.faq-answer.open { max-height:400px; }
-.faq-answer p { padding-bottom:28px; font-size:15px; color:var(--gray); line-height:1.85; }
+.faq-card-a {
+  font-size:13px; color:var(--gray); line-height:1.8;
+}
 
 /* ══ RESPONSIVE — TABLET (≤1200px) ══════════════════════════════ */
 @media (max-width: 1200px) {
@@ -475,6 +489,7 @@ body.page-id-1100 a  { text-decoration: none; color: inherit; }
   .treatments-grid, .steps-container, .testimonials-grid, .blog-grid {
     grid-template-columns:1fr 1fr;
   }
+  .faq-cards { grid-template-columns:1fr 1fr; }
   .hero-image-wrapper { width:380px; height:480px; margin:0 auto; }
   .badge-accent { width:130px; height:130px; bottom:-10px; right:-10px; }
   .badge-accent-number { font-size:36px; }
@@ -565,9 +580,13 @@ body.page-id-1100 a  { text-decoration: none; color: inherit; }
 
   /* FAQ */
   .faq { padding:72px 0; }
-  .faq-list { margin-top:40px; }
-  .faq-question { font-size:15px; padding:22px 0; }
-  .faq-answer p { font-size:14px; }
+  .faq-header { margin-bottom:40px; }
+  .faq-cards { grid-template-columns:1fr; gap:14px; }
+  .faq-card { padding:24px 22px; border-radius:16px; }
+  .faq-card:hover { transform:none; }
+  .faq-card-icon { width:38px; height:38px; font-size:18px; margin-bottom:14px; }
+  .faq-card-q { font-size:14px; }
+  .faq-card-a { font-size:13px; }
 
   /* BIO */
   .bio-grid { gap:36px; }
@@ -1145,72 +1164,49 @@ footer#footer a:hover {
 
 <section class="faq" id="preguntas">
   <div class="container">
-    <div class="faq-inner">
+    <div class="faq-header">
       <div class="section-label">Preguntas frecuentes</div>
-      <h2 class="section-title anim-up">Lo que más nos <em>preguntan</em></h2>
-      <div class="faq-list">
+      <h2 class="section-title anim-up">Todo lo que necesitas <em>saber</em></h2>
+      <p class="section-text anim-up delay-1">Antes de tu primera cita, resolvemos las dudas más habituales de nuestras pacientes.</p>
+    </div>
+    <div class="faq-cards">
 
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            ¿Qué es el Triángulo Armónico® y en qué consiste?
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-answer" role="region">
-            <p>El Triángulo Armónico® es la técnica exclusiva de la Dra. Carmen Galera para tratar la flacidez facial. Consiste en trabajar tres puntos clave del rostro de forma simultánea para recuperar la estructura, la tensión y la armonía natural. A diferencia de otros enfoques, no añade volumen innecesario sino que reposiciona y tensa los tejidos desde dentro.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            ¿Son dolorosos los tratamientos estéticos en Dermaforyou?
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-answer" role="region">
-            <p>La mayoría de nuestros tratamientos son muy bien tolerados. Aplicamos anestesia tópica o local cuando es necesario para que el procedimiento sea lo más cómodo posible. Las pacientes describen la sensación como mínima. La incomodidad depende de la sensibilidad de cada persona y del tratamiento específico.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            ¿Cuándo se ven los resultados de los tratamientos de flacidez facial?
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-answer" role="region">
-            <p>Los primeros resultados se aprecian entre las 2 y 4 semanas tras el tratamiento. Los resultados completos se desarrollan progresivamente durante 2 a 3 meses, a medida que el organismo genera colágeno y se adapta. La duración varía entre 12 y 24 meses dependiendo del tratamiento y del estilo de vida de la paciente.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            ¿Qué diferencia hay entre neuromoduladores y ácido hialurónico?
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-answer" role="region">
-            <p>Los neuromoduladores actúan sobre los músculos faciales reduciendo su contracción, lo que suaviza las líneas de expresión dinámicas (frente, entrecejo, patas de gallo). El ácido hialurónico es un relleno que restaura volumen, hidrata en profundidad y redefine contornos. En Dermaforyou combinamos ambos tratamientos cuando la paciente necesita abordar tanto la relajación muscular como la pérdida de volumen.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            ¿Dónde está la clínica Dermaforyou y cómo pido cita?
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-answer" role="region">
-            <p>Dermaforyou está en Talavera de la Reina (Toledo). Puedes solicitar cita a través de nuestra web, por WhatsApp en el +34 601 370 561 o enviando un email a carmengalera@dermaforyou.com. También atendemos consultas online para pacientes que no pueden desplazarse.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            ¿Cuánto cuesta una consulta en Dermaforyou?
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-answer" role="region">
-            <p>La consulta de valoración con la Dra. Carmen Galera permite evaluar tu caso de forma personalizada y diseñar el plan de tratamiento más adecuado. Puedes consultar precios actualizados contactando directamente con la clínica por WhatsApp o email.</p>
-          </div>
-        </div>
-
+      <div class="faq-card anim-up delay-1">
+        <div class="faq-card-icon">🔬</div>
+        <div class="faq-card-q">¿Qué es el Triángulo Armónico®?</div>
+        <div class="faq-card-a">Técnica exclusiva de la Dra. Carmen Galera. Trabaja 3 puntos clave del rostro de forma simultánea para recuperar estructura y firmeza, sin añadir volumen innecesario.</div>
       </div>
+
+      <div class="faq-card anim-up delay-2">
+        <div class="faq-card-icon">⏳</div>
+        <div class="faq-card-q">¿Cuándo veré los resultados?</div>
+        <div class="faq-card-a">Los primeros resultados aparecen en 2-4 semanas. El resultado completo se desarrolla en 2-3 meses y dura entre 12 y 24 meses según el tratamiento.</div>
+      </div>
+
+      <div class="faq-card anim-up delay-3">
+        <div class="faq-card-icon">🤍</div>
+        <div class="faq-card-q">¿Son dolorosos los tratamientos?</div>
+        <div class="faq-card-a">La mayoría son muy bien tolerados. Aplicamos anestesia tópica o local cuando es necesario. Nuestras pacientes describen la sensación como mínima.</div>
+      </div>
+
+      <div class="faq-card anim-up delay-4">
+        <div class="faq-card-icon">💉</div>
+        <div class="faq-card-q">¿Neuromoduladores vs ácido hialurónico?</div>
+        <div class="faq-card-a">Los neuromoduladores relajan los músculos para suavizar arrugas de expresión. El ácido hialurónico repone volumen y redefine contornos. A menudo los combinamos.</div>
+      </div>
+
+      <div class="faq-card anim-up delay-5">
+        <div class="faq-card-icon">📍</div>
+        <div class="faq-card-q">¿Dónde está la clínica y cómo pido cita?</div>
+        <div class="faq-card-a">Estamos en Talavera de la Reina (Toledo). Pide cita por web, WhatsApp (+34 601 370 561) o email a carmengalera@dermaforyou.com.</div>
+      </div>
+
+      <div class="faq-card anim-up delay-6">
+        <div class="faq-card-icon">💬</div>
+        <div class="faq-card-q">¿Realizáis consultas online?</div>
+        <div class="faq-card-a">Sí, atendemos consultas online para pacientes que no pueden desplazarse. Escríbenos y te informamos sin compromiso.</div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1244,25 +1240,6 @@ footer#footer a:hover {
   document.querySelectorAll('.anim-up,.anim-down,.anim-left,.anim-right,.anim-scale').forEach(function(el){
     el.style.opacity='0';
     obs.observe(el);
-  });
-
-  /* ── FAQ ACORDEÓN ─────────────────────────────────────────────── */
-  document.querySelectorAll('.faq-question').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var isOpen = btn.getAttribute('aria-expanded') === 'true';
-      // Cerrar todos
-      document.querySelectorAll('.faq-question').forEach(function(b) {
-        b.setAttribute('aria-expanded', 'false');
-        var ans = b.nextElementSibling;
-        if (ans) ans.classList.remove('open');
-      });
-      // Abrir el pulsado si estaba cerrado
-      if (!isOpen) {
-        btn.setAttribute('aria-expanded', 'true');
-        var ans = btn.nextElementSibling;
-        if (ans) ans.classList.add('open');
-      }
-    });
   });
 
   /* ── BLOG DINÁMICO — últimos 3 posts de WordPress ───────────── */
