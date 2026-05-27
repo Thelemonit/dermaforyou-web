@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Dra. Carmen Galera — Dermaforyou</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--rose:#c03c5c;--gold:#deb076;--cream:#FBF8F5;--cream2:#F2EDE7;--dark:#1A1A1A;--mid:#4a4a4a;--light:#888;--white:#fff}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--dark);background:var(--white)}
+img{display:block;width:100%;object-fit:cover}
+a{text-decoration:none}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--rose)}
+
+/* BREADCRUMB */
+.breadcrumb{background:var(--cream);padding:16px 48px;font-size:13px;color:var(--light)}
+.breadcrumb a{color:var(--mid)}
+.breadcrumb span{color:var(--rose)}
+
+/* ── SECCIÓN 1: foto izq + trayectoria dcha ── */
+.top-section{background:var(--cream);padding:80px 0 90px}
+.top-inner{max-width:1200px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:400px 1fr;gap:72px;align-items:start}
+
+.profile-photo{border-radius:24px;overflow:hidden;position:sticky;top:32px}
+.profile-photo img{height:540px;object-fit:cover;object-position:top;border-radius:24px}
+
+.trayectoria .lbl{display:block;margin-bottom:16px}
+.trayectoria h1{font-family:'Lora',serif;font-size:clamp(32px,4vw,50px);font-weight:700;line-height:1.1;margin-bottom:10px}
+.trayectoria h1 em{font-style:italic;color:var(--rose)}
+.trayectoria .role-badge{display:inline-block;background:var(--rose);color:#fff;padding:7px 20px;border-radius:100px;font-size:13px;font-weight:500;margin-bottom:32px}
+.trayectoria p{font-size:15px;line-height:1.8;color:var(--mid);margin-bottom:14px}
+.trayectoria .cta-inline{display:inline-block;background:var(--rose);color:#fff;padding:13px 30px;border-radius:100px;font-size:14px;font-weight:600;margin-top:20px}
+
+/* ── SECCIÓN 2: formación izq + especialización dcha ── */
+.bottom-section{background:var(--white);padding:80px 0 90px}
+.bottom-inner{max-width:1200px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+
+/* Formación (timeline) */
+.formation .sec-lbl{display:block;margin-bottom:14px}
+.formation h2{font-family:'Lora',serif;font-size:28px;font-weight:700;margin-bottom:36px;line-height:1.2}
+.formation h2 em{font-style:italic;color:var(--rose)}
+.timeline{border-left:2px solid var(--cream2);margin-left:8px}
+.t-item{position:relative;padding:0 0 30px 36px}
+.t-dot{position:absolute;left:-9px;top:3px;width:16px;height:16px;background:var(--rose);border-radius:50%;border:3px solid var(--white)}
+.t-year{font-size:11px;font-weight:600;letter-spacing:.1em;color:var(--rose);text-transform:uppercase;display:block;margin-bottom:4px}
+.t-title{font-family:'Lora',serif;font-size:17px;font-weight:700;margin-bottom:5px}
+.t-desc{font-size:13px;color:var(--mid);line-height:1.6}
+
+/* Especialización */
+.especialidades .sec-lbl{display:block;margin-bottom:14px}
+.especialidades h2{font-family:'Lora',serif;font-size:28px;font-weight:700;margin-bottom:36px;line-height:1.2}
+.especialidades h2 em{font-style:italic;color:var(--rose)}
+.spec-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:40px}
+.spec-list li{font-size:15px;color:var(--mid);padding-left:22px;position:relative;line-height:1.5}
+.spec-list li::before{content:'';position:absolute;left:0;top:8px;width:8px;height:8px;background:var(--rose);border-radius:50%}
+.memb-label{font-family:'Lora',serif;font-size:18px;font-weight:700;margin-bottom:16px}
+.memb-tags{display:flex;flex-wrap:wrap;gap:10px}
+.memb-tags span{border:1px solid rgba(192,60,92,.3);color:var(--rose);padding:7px 16px;border-radius:100px;font-size:12px}
+
+/* CTA */
+.cta-section{background:var(--rose);padding:90px 48px;text-align:center}
+.cta-section .lbl{color:rgba(255,255,255,.7);display:block;margin-bottom:14px}
+.cta-section h2{font-family:'Lora',serif;font-size:clamp(28px,3.5vw,44px);font-weight:700;color:#fff;line-height:1.15;margin-bottom:14px}
+.cta-section h2 em{font-style:italic;color:rgba(255,255,255,.7)}
+.cta-section p{font-size:16px;color:rgba(255,255,255,.82);max-width:420px;margin:0 auto 36px;line-height:1.7}
+.btn-white{background:#fff;color:var(--rose);padding:14px 40px;border-radius:100px;font-size:15px;font-weight:700;display:inline-block}
+.back-row{margin-top:20px}
+.back-row a{font-size:13px;color:rgba(255,255,255,.65)}
+</style>
+</head>
+<body>
+
+<div class="breadcrumb">
+  <a href="/">Dermaforyou</a> &nbsp;›&nbsp;
+  <a href="/equipo-dermaforyou/">Equipo</a> &nbsp;›&nbsp;
+  <span>Dra. Carmen Galera</span>
+</div>
+
+<!-- FOTO + TRAYECTORIA -->
+<section class="top-section">
+  <div class="top-inner">
+    <div class="profile-photo">
+      <img src="https://www.dermaforyou.com/wp-content/uploads/2025/07/slide-dra-carmen-galera-2025.webp" alt="Dra. Carmen Galera">
+    </div>
+    <div class="trayectoria">
+      <span class="lbl">Equipo Dermaforyou</span>
+      <h1>Dra. Carmen <em>Galera</em></h1>
+      <span class="role-badge">Fundadora · Directora Médica · Dermatóloga</span>
+      <p>Doctora en Medicina Cum Laude por la Universidad Complutense de Madrid y licenciada en Medicina y Cirugía por la Universidad de Salamanca. Más de 20 años dedicados a la dermatología estética desde su especialización MIR en el Hospital Universitario 12 de Octubre de Madrid.</p><p>Fundó Dermaforyou en 2013 en Talavera de la Reina. Paralelamente ejerce como responsable de la Unidad de Dermatología en el Hospital de Día Quirón Salud Talavera.</p><p>Creadora del método Skin Layer, un protocolo integral que actúa sobre todas las capas de la piel, y de la técnica Triángulo Armónico® para el tratamiento de la flacidez facial.</p>
+      <a href="/consulta-dermatologica-online/" class="cta-inline">Pedir cita →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FORMACIÓN + ESPECIALIZACIÓN -->
+<section class="bottom-section">
+  <div class="bottom-inner">
+    <div class="formation">
+      <span class="lbl sec-lbl">Currículum</span>
+      <h2>Formación y <em>experiencia</em></h2>
+      <div class="timeline"><div class="t-item"><div class="t-dot"></div><span class="t-year">Licenciatura</span><div class="t-title">Medicina y Cirugía</div><div class="t-desc">Universidad de Salamanca.</div></div><div class="t-item"><div class="t-dot"></div><span class="t-year">Doctorado</span><div class="t-title">Medicina — Cum Laude</div><div class="t-desc">Universidad Complutense de Madrid.</div></div><div class="t-item"><div class="t-dot"></div><span class="t-year">2001–2005</span><div class="t-title">MIR en Dermatología</div><div class="t-desc">Hospital Universitario 12 de Octubre, Madrid.</div></div><div class="t-item"><div class="t-dot"></div><span class="t-year">2005–2007</span><div class="t-title">Especialista en láser</div><div class="t-desc">Instituto Médico Láser de Madrid.</div></div><div class="t-item"><div class="t-dot"></div><span class="t-year">2007–2012</span><div class="t-title">Adjunta en Dermatología</div><div class="t-desc">Hospital Virgen de la Salud, Toledo.</div></div><div class="t-item"><div class="t-dot"></div><span class="t-year">2006–hoy</span><div class="t-title">Responsable Unidad Dermatología</div><div class="t-desc">Hospital de Día Quirón Salud, Talavera de la Reina.</div></div><div class="t-item"><div class="t-dot"></div><span class="t-year">2013–hoy</span><div class="t-title">Fundadora y Directora Médica</div><div class="t-desc">Clínica Dermatológica Dermaforyou.</div></div></div>
+    </div>
+    <div class="especialidades">
+      <span class="lbl sec-lbl">Especialización</span>
+      <h2>Áreas de <em>trabajo</em></h2>
+      <ul class="spec-list"><li>Dermatología estética y cosmética</li><li>Tratamientos con láser</li><li>Técnica Triángulo Armónico® para flacidez facial</li><li>Método Skin Layer</li><li>Dermatología quirúrgica</li></ul>
+      <div class="memb-label">Afiliaciones</div>
+      <div class="memb-tags"><span>AEDV</span><span>Grupo Cosmética AEDV</span><span>Int. Dermatología Cosmética</span><span>Sociedad Europea DCAE</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <span class="lbl">Reserva tu consulta</span>
+  <h2>¿Hablamos de tu <em>piel</em>?</h2>
+  <p>Pide cita con la Dra. Galera y diseñaremos juntos el plan ideal para ti.</p>
+  <a href="/consulta-dermatologica-online/" class="btn-white">Pedir cita →</a>
+  <div class="back-row"><a href="/equipo-dermaforyou/">← Ver todo el equipo</a></div>
+</section>
+
+</body></html>

@@ -35,3 +35,37 @@
 ## Palabras prohibidas
 - ❌ `botox` / `bótox` / `toxina botulínica`
 - ✅ Usar siempre: `neuromodulador` / `neuromoduladores`
+
+---
+
+## Sesión 2026-05-27 — Página Equipo + Perfiles Médicos
+
+### Archivos añadidos
+- `equipo/equipo.html` — Rediseño completo página `/equipo-dermaforyou/` (Diseño E, versión final)
+- `equipo/perfiles/perfil-carmen-galera.html` — Perfil individual Dra. Carmen Galera
+- `equipo/perfiles/perfil-blas-gomez.html` — Perfil individual Dr. Blas Gómez
+- `equipo/perfiles/perfil-ignacio-capdevila.html` — Perfil individual Dr. Ignacio Capdevila
+- `equipo/perfiles/perfil-teresa-calderon.html` — Perfil individual Dra. Teresa Calderón
+
+### WordPress IDs
+| Archivo | WP ID | URL |
+|---|---|---|
+| equipo.html | page 2804 | `/equipo-dermaforyou/` |
+| perfil-carmen-galera.html | dt_team 5564 | `/equipo/carmen-galera-dermatologa-equipo-dermaforyou/` |
+| perfil-blas-gomez.html | dt_team 5560 | `/equipo/blas-gomez-dermatologo-equipo-dermaforyou/` |
+| perfil-ignacio-capdevila.html | dt_team 5565 | `/equipo/ignacio-capdevila-cirujano-plastico-equipo-dermaforyou/` |
+| perfil-teresa-calderon.html | dt_team 5562 | `/equipo/teresa-calderon-duque-estetica-equipo-dermaforyou/` |
+
+### Cambios técnicos
+- Template equipo: `template-team.php` → `''` (default) — elimina Revolution Slider y grid antiguo
+- CSS desplegado en Gutenberg `<!-- wp:html -->` para evitar wpautop
+- Override CSS en `#main>.wf-wrap` (scoped) para no romper el footer
+- Footer global: CSS escrito en `presscore_custom_css` — columnas del footer apiladas en móvil
+- SEO/AEO: JSON-LD `MedicalOrganization` + `Physician` + `FAQPage`, meta description, sección FAQ visible
+
+### Diseño equipo (equipo.html)
+- Hero: foto `carmen-portada-dermaforyou-scaled.jpg`, texto izquierda (desktop) / centrado (móvil)
+- Sección Dra. Carmen con badge "+20 años" visible (sin overflow:hidden que lo cortaba)
+- Grid médicos: `align-items:start` — sin espacio vacío entre cards
+- FAQ: grid 2 columnas, tarjetas rectangulares
+- Responsive completo: 1024 / 768 / 480px
