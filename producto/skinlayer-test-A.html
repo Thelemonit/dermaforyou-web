@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skinlayer Test — Diseño A: Editorial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rose: #c03c5c;
+    --gold: #deb076;
+    --cream: #FBF8F5;
+    --dark: #1A1A1A;
+    --mid: #4a4a4a;
+    --light: #e8e2da;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Raleway', sans-serif;
+    background: #fff;
+    color: var(--dark);
+  }
+
+  /* ── NAV (referencia) ── */
+  .nav-ref {
+    height: 64px;
+    background: #fff;
+    border-bottom: 1px solid var(--light);
+    display: flex;
+    align-items: center;
+    padding: 0 48px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    letter-spacing: .08em;
+    color: var(--mid);
+  }
+  .nav-ref span { color: var(--rose); margin: 0 8px; }
+
+  /* ── PRODUCTO GRID ── */
+  .product-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 64px 48px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  /* ── IMAGEN ── */
+  .product-gallery {
+    position: sticky;
+    top: 80px;
+  }
+  .product-gallery .main-img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    display: block;
+  }
+  .badge-overlay {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    background: var(--rose);
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+  }
+  .gallery-wrapper { position: relative; }
+
+  /* ── CONTENIDO ── */
+  .product-content { padding-top: 8px; }
+
+  .category-tag {
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .product-title {
+    font-family: 'Lora', serif;
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--dark);
+    margin-bottom: 8px;
+  }
+
+  .product-subtitle {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--mid);
+    margin-bottom: 32px;
+  }
+
+  .divider {
+    width: 48px;
+    height: 2px;
+    background: var(--gold);
+    margin-bottom: 28px;
+  }
+
+  .price-block {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .price-main {
+    font-family: 'Lora', serif;
+    font-size: 36px;
+    font-weight: 500;
+    color: var(--dark);
+  }
+  .price-note {
+    font-size: 13px;
+    color: var(--mid);
+    line-height: 1.5;
+    max-width: 240px;
+  }
+  .price-discount {
+    display: inline-block;
+    background: var(--cream);
+    border: 1px solid var(--gold);
+    color: var(--mid);
+    font-size: 12px;
+    padding: 4px 10px;
+    margin-top: 4px;
+    border-radius: 2px;
+  }
+
+  .desc-title {
+    font-size: 11px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--mid);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+
+  .indicated-list {
+    list-style: none;
+    margin-bottom: 32px;
+  }
+  .indicated-list li {
+    font-size: 15px;
+    color: var(--mid);
+    line-height: 1.65;
+    padding: 8px 0 8px 20px;
+    border-bottom: 1px solid var(--light);
+    position: relative;
+  }
+  .indicated-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+  }
+
+  .doctor-block {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--cream);
+    padding: 16px 20px;
+    margin-bottom: 32px;
+    border-left: 3px solid var(--rose);
+  }
+  .doctor-block svg { flex-shrink: 0; }
+  .doctor-block p {
+    font-size: 13px;
+    color: var(--mid);
+    line-height: 1.5;
+  }
+  .doctor-block strong { color: var(--dark); }
+
+  /* ── CTA ── */
+  .btn-add {
+    width: 100%;
+    background: var(--rose);
+    color: #fff;
+    border: none;
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 18px 32px;
+    cursor: pointer;
+    transition: background .2s;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 14px;
+  }
+  .btn-add:hover { background: #a8304c; }
+
+  .btn-consult {
+    width: 100%;
+    background: transparent;
+    color: var(--dark);
+    border: 1.5px solid var(--dark);
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 16px 32px;
+    cursor: pointer;
+    transition: all .2s;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+  }
+  .btn-consult:hover { border-color: var(--rose); color: var(--rose); }
+
+  /* ── GARANTÍAS ── */
+  .guarantees {
+    display: flex;
+    gap: 0;
+    border-top: 1px solid var(--light);
+    margin-top: 36px;
+    padding-top: 28px;
+  }
+  .guarantee-item {
+    flex: 1;
+    text-align: center;
+    padding: 0 12px;
+    border-right: 1px solid var(--light);
+  }
+  .guarantee-item:last-child { border-right: none; }
+  .guarantee-item .g-icon { font-size: 20px; margin-bottom: 6px; }
+  .guarantee-item p { font-size: 11px; color: var(--mid); line-height: 1.4; letter-spacing: .04em; }
+  .guarantee-item strong { display: block; font-size: 12px; color: var(--dark); margin-bottom: 3px; font-weight: 600; }
+
+  /* ── SECCIÓN PROCESO ── */
+  .process-section {
+    background: var(--cream);
+    padding: 72px 48px;
+  }
+  .process-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .process-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+  .process-header h2 {
+    font-family: 'Lora', serif;
+    font-size: 28px;
+    font-weight: 400;
+    margin-top: 12px;
+  }
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  .step {
+    text-align: center;
+  }
+  .step-number {
+    width: 48px;
+    height: 48px;
+    border: 1.5px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Lora', serif;
+    font-size: 18px;
+    color: var(--gold);
+    margin: 0 auto 16px;
+  }
+  .step h3 {
+    font-family: 'Lora', serif;
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  .step p {
+    font-size: 14px;
+    color: var(--mid);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .product-wrap { grid-template-columns: 1fr; gap: 40px; padding: 40px 24px; }
+    .product-gallery { position: static; }
+    .process-steps { grid-template-columns: 1fr; gap: 32px; }
+    .process-section { padding: 48px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Nav referencia -->
+<div class="nav-ref">
+  Inicio <span>›</span> Tienda <span>›</span> Skinlayer Test
+</div>
+
+<!-- Producto principal -->
+<div class="product-wrap">
+
+  <!-- Imagen -->
+  <div class="product-gallery">
+    <div class="gallery-wrapper">
+      <img class="main-img"
+           src="https://www.dermaforyou.com/wp-content/uploads/2024/10/formulario-cosmetica-dermaforyou-jpg.webp"
+           alt="Skinlayer Test — Cosmética médica prescrita por dermatóloga">
+      <div class="badge-overlay">Prescripción médica</div>
+    </div>
+  </div>
+
+  <!-- Contenido -->
+  <div class="product-content">
+    <span class="category-tag">Diagnóstico · Cosmética médica</span>
+    <h1 class="product-title">Skinlayer Test</h1>
+    <p class="product-subtitle">Análisis y prescripción personalizada por dermatóloga</p>
+    <div class="divider"></div>
+
+    <!-- Precio -->
+    <div class="price-block">
+      <span class="price-main">100 €</span>
+      <div>
+        <div class="price-discount">— 30 € en productos &gt; 200 €</div>
+      </div>
+    </div>
+
+    <!-- Indicaciones -->
+    <p class="desc-title">Indicado para pacientes que</p>
+    <ul class="indicated-list">
+      <li>Valoran la prescripción de cosmética médica por dermatóloga</li>
+      <li>Buscan una rutina personalizada y científicamente validada</li>
+      <li>Quieren optimizar su inversión en cosmética con criterio médico</li>
+    </ul>
+
+    <!-- Autora -->
+    <div class="doctor-block">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c03c5c" stroke-width="1.5">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+        <circle cx="12" cy="7" r="4"/>
+      </svg>
+      <p>Elaborado por <strong>Dra. Carmen Galera</strong>, dermatóloga especialista en cosmética médica y sistema SkinLayer.</p>
+    </div>
+
+    <!-- CTA -->
+    <a href="#" class="btn-add">Añadir al carrito — 100 €</a>
+    <a href="https://www.dermaforyou.com/consulta-dermatologica-online/" class="btn-consult">¿Tienes dudas? Consulta online</a>
+
+    <!-- Garantías -->
+    <div class="guarantees">
+      <div class="guarantee-item">
+        <div class="g-icon">🔬</div>
+        <strong>Prescripción médica</strong>
+        <p>Por dermatóloga colegiada</p>
+      </div>
+      <div class="guarantee-item">
+        <div class="g-icon">💊</div>
+        <strong>Cosmética activa</strong>
+        <p>Formulaciones de eficacia probada</p>
+      </div>
+      <div class="guarantee-item">
+        <div class="g-icon">✉️</div>
+        <strong>Resultado digital</strong>
+        <p>Recibe tu plan en 48–72 h</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sección proceso -->
+<div class="process-section">
+  <div class="process-inner">
+    <div class="process-header">
+      <span class="category-tag">Cómo funciona</span>
+      <h2>Tu rutina en 3 pasos</h2>
+    </div>
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Compra el test</h3>
+        <p>Recibirás acceso a un formulario detallado sobre tu piel, hábitos y objetivos.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Análisis dermatológico</h3>
+        <p>La Dra. Carmen Galera estudia tu caso y selecciona los activos más adecuados para ti.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Tu prescripción</h3>
+        <p>Recibes tu rutina personalizada con los productos recomendados y cómo aplicarlos.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
