@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Sistema SkinLayer — Diseño Final | Dermaforyou</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -71,8 +61,23 @@
   ]
 }
 </script>
-
 <style>
+/* ══ THE7 OVERRIDES — full width sin sidebar ══ */
+/* Hero flush al menú */
+#main{padding-top:0!important;margin-top:0!important}
+#main-slideshow{display:none!important}
+.page-title-bar,.breadcrumbs-title-block,.with-title-bar{display:none!important}
+#sidebar,#secondary,.widget-area{display:none!important}
+/* Elimina el grid 2-columnas que The7 aplica en sidebar-right */
+#main .wf-container-main{display:block!important;width:100%!important}
+/* Hace wrap y content 100% de ancho */
+#main>.wf-wrap{width:100%!important;max-width:100%!important;padding-left:0!important;padding-right:0!important}
+#content,#main,.content-area{width:100%!important;max-width:100%!important;padding-left:0!important;padding-right:0!important}
+#main .padding-wrap{padding-top:0!important;padding-bottom:0!important}
+.the7-post-entry,.wpb-content-wrapper{padding:0!important}
+/* Fix sticky aside */
+#main,#content,.the7-post-entry,.wpb-content-wrapper,.entry-content,.wf-wrap,.wf-container-main{overflow:visible!important}
+
 /* ── RESET & BASE ────────────────────────────────────────────── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Inter',sans-serif;background:#fff;color:#1A1A1A;-webkit-font-smoothing:antialiased}
@@ -92,30 +97,6 @@ a{text-decoration:none;color:inherit}
   --mid:#4a4a4a;
   --gray:#7a7a7a;
   --white:#ffffff;
-}
-
-/* ── PREVIEW SHELL ──────────────────────────────────────────── */
-.preview-bar{
-  background:linear-gradient(90deg,#1a0a10,#2d1a1f);
-  color:#fff;text-align:center;
-  padding:9px 16px;
-  font-size:12px;font-family:Inter,sans-serif;letter-spacing:.05em;
-}
-.preview-bar strong{color:var(--gold)}
-.fake-nav{
-  background:#fff;border-bottom:1px solid var(--cream2);
-  height:72px;display:flex;align-items:center;
-  justify-content:space-between;padding:0 48px;
-  position:sticky;top:0;z-index:100;
-  box-shadow:0 2px 20px rgba(0,0,0,.06);
-}
-.fake-nav-logo{font-family:'Lora',serif;font-size:18px;font-weight:500}
-.fake-nav-logo span{color:var(--rose)}
-.fake-nav-links{display:flex;gap:32px;font-size:13px;font-weight:500;color:var(--mid)}
-.fake-nav-btn{
-  background:var(--rose);color:#fff;
-  padding:10px 24px;border-radius:100px;
-  font-size:13px;font-weight:600;font-family:'Lora',serif;
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -482,8 +463,8 @@ a{text-decoration:none;color:inherit}
   .sl-flip-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:600px){
-  .fake-nav{padding:0 20px}
-  .fake-nav-links{display:none}
+  
+  
   .sl-hero{padding:80px 24px 72px}
   .sl-what,.sl-protocol,.sl-faq{padding:72px 24px}
   .sl-results{padding:72px 0 72px 24px}
@@ -497,22 +478,8 @@ a{text-decoration:none;color:inherit}
   .sl-what-inner{gap:36px}
   .sl-diagram{aspect-ratio:4/3}
 }
+
 </style>
-</head>
-<body>
-
-<!-- Preview label -->
-<div class="preview-bar">✦ <strong>DISEÑO FINAL</strong> &nbsp;·&nbsp; Hero C · Pilares C · Qué es C · Protocolo B · Resultados C · FAQ B · CTA B</div>
-
-<!-- Nav simulada -->
-<nav class="fake-nav">
-  <div class="fake-nav-logo">Derma<span>for</span>you</div>
-  <div class="fake-nav-links">
-    <span>Tratamientos</span><span>Sistema SkinLayer</span><span>Equipo</span><span>Blog</span>
-  </div>
-  <a href="https://www.dermaforyou.com/contacto/" class="fake-nav-btn">Pedir cita</a>
-</nav>
-
 <!-- ══ 1. HERO ══════════════════════════════════════════════ -->
 <section class="sl-hero" aria-label="Sistema SkinLayer">
   <div class="sl-hero-line"></div>
@@ -523,7 +490,7 @@ a{text-decoration:none;color:inherit}
     sinérgicamente desde la epidermis hasta la dermis profunda para transformar tu piel de verdad.
   </p>
   <div class="sl-hero-ctas">
-    <a href="https://www.dermaforyou.com/contacto/" class="sl-btn-rose">Pedir cita</a>
+    <a href="https://www.dermaforyou.com/consulta-dermatologica-online/" class="sl-btn-rose">Pedir cita</a>
     <a href="#protocolo" class="sl-btn-ghost">Ver el protocolo</a>
   </div>
 </section>
@@ -585,7 +552,7 @@ a{text-decoration:none;color:inherit}
 
       <div class="sl-proto-card">
         <div class="sl-proto-card-head">
-          <div class="sl-proto-icon">🔬</div>
+          <div class="sl-proto-icon">&#x1f52c;</div>
           <div>
             <div class="sl-proto-num">Fase 01</div>
             <h3>Tratamiento médico-dermatológico</h3>
@@ -605,7 +572,7 @@ a{text-decoration:none;color:inherit}
 
       <div class="sl-proto-card">
         <div class="sl-proto-card-head">
-          <div class="sl-proto-icon">✨</div>
+          <div class="sl-proto-icon">&#x2728;</div>
           <div>
             <div class="sl-proto-num">Fase 02</div>
             <h3>Tratamiento de cabina</h3>
@@ -615,7 +582,6 @@ a{text-decoration:none;color:inherit}
         <div class="sl-proto-card-body">
           <p>Realizado por nuestras esteticistas especializadas. Aunque el mayor cambio lo conseguimos con el tratamiento médico, el de cabina —<a href="https://www.dermaforyou.com/reaction-radiofrecuencia/">radiofrecuencia</a>, <a href="https://www.dermaforyou.com/dermalinfusion/">Dermalinfusión</a> o Skin Profesional— complementa y lleva a <strong>resultados finales mejores</strong>.</p>
           <div class="sl-proto-tags">
-            <span class="sl-proto-tag">Radiofrecuencia</span>
             <span class="sl-proto-tag">Dermalinfusión</span>
             <span class="sl-proto-tag">Skin Profesional</span>
           </div>
@@ -624,7 +590,7 @@ a{text-decoration:none;color:inherit}
 
       <div class="sl-proto-card">
         <div class="sl-proto-card-head">
-          <div class="sl-proto-icon">🌿</div>
+          <div class="sl-proto-icon">&#x1f33f;</div>
           <div>
             <div class="sl-proto-num">Fase 03</div>
             <h3>Tratamiento cosmético</h3>
@@ -643,7 +609,7 @@ a{text-decoration:none;color:inherit}
 
       <div class="sl-proto-card">
         <div class="sl-proto-card-head">
-          <div class="sl-proto-icon">💊</div>
+          <div class="sl-proto-icon">&#x1f48a;</div>
           <div>
             <div class="sl-proto-num">Fase 04</div>
             <h3>Nutricosméticos</h3>
@@ -768,7 +734,7 @@ a{text-decoration:none;color:inherit}
         <div class="sl-flip-inner">
           <div class="sl-flip-front">
             <div class="sl-flip-front-num">1</div>
-            <div class="sl-flip-front-icon">💡</div>
+            <div class="sl-flip-front-icon">&#x1f4a1;</div>
             <div class="sl-flip-front-q">¿Qué es el Sistema SkinLayer?</div>
             <div class="sl-flip-front-hint">Ver respuesta</div>
           </div>
@@ -783,7 +749,7 @@ a{text-decoration:none;color:inherit}
         <div class="sl-flip-inner">
           <div class="sl-flip-front">
             <div class="sl-flip-front-num">2</div>
-            <div class="sl-flip-front-icon">⏱</div>
+            <div class="sl-flip-front-icon">&#x23f1;</div>
             <div class="sl-flip-front-q">¿Cuánto tiempo dura el protocolo SkinLayer?</div>
             <div class="sl-flip-front-hint">Ver respuesta</div>
           </div>
@@ -798,7 +764,7 @@ a{text-decoration:none;color:inherit}
         <div class="sl-flip-inner">
           <div class="sl-flip-front">
             <div class="sl-flip-front-num">3</div>
-            <div class="sl-flip-front-icon">🎯</div>
+            <div class="sl-flip-front-icon">&#x1f3af;</div>
             <div class="sl-flip-front-q">¿Para qué problemas de piel es efectivo?</div>
             <div class="sl-flip-front-hint">Ver respuesta</div>
           </div>
@@ -813,7 +779,7 @@ a{text-decoration:none;color:inherit}
         <div class="sl-flip-inner">
           <div class="sl-flip-front">
             <div class="sl-flip-front-num">4</div>
-            <div class="sl-flip-front-icon">⚡</div>
+            <div class="sl-flip-front-icon">&#x26a1;</div>
             <div class="sl-flip-front-q">¿Por qué combinar los 4 tratamientos es más eficaz?</div>
             <div class="sl-flip-front-hint">Ver respuesta</div>
           </div>
@@ -828,7 +794,7 @@ a{text-decoration:none;color:inherit}
         <div class="sl-flip-inner">
           <div class="sl-flip-front">
             <div class="sl-flip-front-num">5</div>
-            <div class="sl-flip-front-icon">🔬</div>
+            <div class="sl-flip-front-icon">&#x1f52c;</div>
             <div class="sl-flip-front-q">¿Cuál es la diferencia entre el tratamiento médico y el de cabina?</div>
             <div class="sl-flip-front-hint">Ver respuesta</div>
           </div>
@@ -843,7 +809,7 @@ a{text-decoration:none;color:inherit}
         <div class="sl-flip-inner">
           <div class="sl-flip-front">
             <div class="sl-flip-front-num">6</div>
-            <div class="sl-flip-front-icon">✨</div>
+            <div class="sl-flip-front-icon">&#x2728;</div>
             <div class="sl-flip-front-q">¿Cuándo puedo ver los resultados del Sistema SkinLayer?</div>
             <div class="sl-flip-front-hint">Ver respuesta</div>
           </div>
@@ -863,10 +829,7 @@ a{text-decoration:none;color:inherit}
   <h2>Descubre qué protocolo <em>SkinLayer</em> es el tuyo</h2>
   <p>La Dra. Carmen Galera valorará tu piel y diseñará el protocolo personalizado más adecuado para ti en una primera consulta.</p>
   <div class="sl-cta-btns">
-    <a href="https://www.dermaforyou.com/contacto/" class="sl-btn-rose-lg">Pedir primera consulta</a>
+    <a href="https://www.dermaforyou.com/consulta-dermatologica-online/" class="sl-btn-rose-lg">Pedir primera consulta</a>
     <a href="https://www.dermaforyou.com/equipo-dermaforyou/" class="sl-btn-outline-rose">Conocer al equipo</a>
   </div>
 </section>
-
-</body>
-</html>
