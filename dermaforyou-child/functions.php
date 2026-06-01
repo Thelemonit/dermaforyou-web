@@ -25,7 +25,27 @@ add_action( 'wp_enqueue_scripts', function() {
 
 
 // ============================================================
-// 2. EQUIPO MÉDICO (/equipo/) — SEO para el archivo dt_team
+// 2. HERENCIA DE THEME MODS DEL PADRE (dt-the7)
+//
+// WordPress guarda la configuración del Customizer (logo, colores,
+// layout…) en theme_mods_{slug}. Al activar el child theme, esa clave
+// cambia a theme_mods_dermaforyou-child y queda vacía.
+// Este filtro hace que el child herede los mods del padre mientras
+// no tenga los suyos propios guardados.
+// ============================================================
+add_filter( 'pre_option_theme_mods_dermaforyou-child', function( $value ) {
+    if ( false === $value ) {
+        $parent_mods = get_option( 'theme_mods_dt-the7' );
+        if ( ! empty( $parent_mods ) ) {
+            return $parent_mods;
+        }
+    }
+    return $value;
+} );
+
+
+// ============================================================
+// 3. EQUIPO MÉDICO (/equipo/) — SEO para el archivo dt_team
 //
 // La página de equipo es un archivo de CPT `dt_team`.
 // El tema The7 genera título "Equipo archivo" y H1 "Team Archive:".
@@ -33,7 +53,7 @@ add_action( 'wp_enqueue_scripts', function() {
 // ============================================================
 
 /**
- * 2a. Override del <title> via RankMath
+ * 3a. Override del <title> via RankMath
  */
 add_filter( 'rank_math/frontend/title', function( $title ) {
     if ( is_post_type_archive( 'dt_team' ) ) {
@@ -43,7 +63,7 @@ add_filter( 'rank_math/frontend/title', function( $title ) {
 } );
 
 /**
- * 2b. Override del <title> via WordPress core (fallback si RankMath no filtra)
+ * 3b. Override del <title> via WordPress core (fallback si RankMath no filtra)
  */
 add_filter( 'pre_get_document_title', function( $title ) {
     if ( is_post_type_archive( 'dt_team' ) ) {
@@ -53,7 +73,7 @@ add_filter( 'pre_get_document_title', function( $title ) {
 } );
 
 /**
- * 2c. Override de la meta descripción via RankMath
+ * 3c. Override de la meta descripción via RankMath
  */
 add_filter( 'rank_math/frontend/description', function( $desc ) {
     if ( is_post_type_archive( 'dt_team' ) ) {
@@ -63,7 +83,7 @@ add_filter( 'rank_math/frontend/description', function( $desc ) {
 } );
 
 /**
- * 2d. Schema JSON-LD para el archivo de equipo
+ * 3d. Schema JSON-LD para el archivo de equipo
  *     Inyectado en <head> con prioridad 99 (después de RankMath)
  */
 add_action( 'wp_head', function() {
