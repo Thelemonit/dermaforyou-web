@@ -443,9 +443,125 @@ Text Domain:  dermaforyou-child
    secciones de la web: homepage, tratamientos, blog, etc.
    ============================================================ */
 
-/* Ejemplo de estructura:
-.mi-nueva-seccion { ... }
-*/
+/* ============================================================
+   7a. HOMEPAGE — Hero + Secciones
+   (/  →  página principal)
+   ============================================================ */
+
+/* Variables adicionales usadas en la homepage */
+.home { --deep-rose: #c03c5c; --gray: #5a5a5a; }
+
+/* Hero principal */
+.hero-content {
+  position: relative; z-index: 2;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 120px; align-items: center;
+}
+.hero-text { max-width: 580px; }
+.hero-label {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--rose); font-weight: 700; margin-bottom: 28px;
+}
+.hero-label::before {
+  content: ''; width: 8px; height: 8px; border-radius: 50%;
+  background: var(--rose); animation: glow 2s ease-in-out infinite;
+}
+@keyframes glow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: .6; transform: scale(1.3); }
+}
+.hero-subtitle {
+  font-size: 18px; color: var(--mid); line-height: 1.85;
+  margin-bottom: 44px; max-width: 500px;
+}
+.hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+
+/* Hero visual (columna imagen) */
+.hero-visual { position: relative; display: flex; justify-content: center; align-items: center; }
+.hero-image-wrapper {
+  position: relative; width: 480px; height: 600px;
+  border-radius: 280px 280px 200px 200px;
+  overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,.1);
+}
+.hero-image-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+.hero-image-frame {
+  position: absolute; inset: 0; border-radius: inherit;
+  border: 1px solid rgba(255,255,255,.5); pointer-events: none;
+}
+
+/* Etiqueta flotante en imagen */
+.hero-desc {
+  font-size: 16px; line-height: 1.8; color: var(--mid);
+  max-width: 540px; margin-bottom: 24px;
+}
+
+/* Secciones genéricas */
+.section-label {
+  display: inline-block; font-size: 11px; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--gold); font-weight: 700;
+  margin-bottom: 20px; position: relative; padding-left: 16px;
+}
+.section-label::before {
+  content: ''; position: absolute; left: 0; top: 50%;
+  transform: translateY(-50%); width: 10px; height: 2px; background: var(--gold);
+}
+.section-title {
+  font-size: 48px; font-weight: 400; line-height: 1.2;
+  color: var(--dark); margin-bottom: 28px; letter-spacing: -.8px;
+}
+.section-title em { font-style: italic; color: var(--rose); font-weight: 500; }
+.section-text { font-size: 16px; color: var(--mid); line-height: 1.85; margin-bottom: 20px; }
+
+
+/* ============================================================
+   7b. SISTEMA SKINLAYER — Hero + Secciones
+   (/sistema-skinlayer/)
+   ============================================================ */
+
+.sl-hero {
+  background: var(--cream);
+  padding: 120px 48px 100px;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.sl-hero::before {
+  content: ''; position: absolute; top: -160px; right: -160px;
+  width: 480px; height: 480px; border-radius: 50%;
+  border: 1px solid rgba(192,60,92,.07); pointer-events: none;
+}
+.sl-hero::after {
+  content: ''; position: absolute; bottom: -100px; left: -100px;
+  width: 360px; height: 360px; border-radius: 50%;
+  border: 1px solid rgba(222,176,118,.1); pointer-events: none;
+}
+.sl-hero-line { width: 36px; height: 1px; background: var(--rose); margin: 0 auto 22px; }
+.sl-hero-kicker {
+  font-size: 11px; letter-spacing: 3.5px; text-transform: uppercase;
+  color: var(--rose); font-weight: 700; margin-bottom: 24px;
+  font-family: 'Inter', sans-serif;
+}
+.sl-hero h1 {
+  font-family: 'Lora', serif;
+  font-size: clamp(38px, 5.5vw, 76px);
+  font-weight: 400; line-height: 1.1; color: var(--dark);
+  margin: 0 auto 24px; letter-spacing: -1.5px;
+  max-width: 900px; position: relative; z-index: 1;
+}
+.sl-hero h1 em { font-style: italic; color: var(--rose); }
+.sl-hero-sub {
+  font-size: 17px; color: var(--mid); line-height: 1.8;
+  max-width: 560px; margin: 0 auto 48px;
+  font-weight: 300; position: relative; z-index: 1;
+}
+.sl-hero-ctas {
+  display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+  position: relative; z-index: 1;
+}
+.sl-section-tag {
+  font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--rose); font-weight: 700; margin-bottom: 12px;
+}
 
 
 /* ============================================================
