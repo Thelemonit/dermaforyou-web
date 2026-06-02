@@ -33,12 +33,14 @@ add_action( 'wp_enqueue_scripts', function() {
 // Este filtro hace que el child herede los mods del padre mientras
 // no tenga los suyos propios guardados.
 // ============================================================
-add_filter( 'pre_option_theme_mods_dermaforyou-child', function( $value ) {
-    if ( false === $value ) {
-        $parent_mods = get_option( 'theme_mods_dt-the7' );
-        if ( ! empty( $parent_mods ) ) {
-            return $parent_mods;
+add_filter( 'option_theme_mods_dermaforyou-child', function( $value ) {
+    $parent_mods = get_option( 'theme_mods_dt-the7', [] );
+    if ( ! empty( $parent_mods ) ) {
+        if ( ! is_array( $value ) ) {
+            $value = [];
         }
+        // Base: mods del padre. El child puede sobrescribir encima.
+        return array_merge( $parent_mods, $value );
     }
     return $value;
 } );
