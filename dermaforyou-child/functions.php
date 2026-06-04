@@ -15,11 +15,20 @@ add_action( 'wp_enqueue_scripts', function() {
         'parent-style',
         get_template_directory_uri() . '/style.css'
     );
+    // Estilos globales de componentes (productos, footer, skinlayer…)
     wp_enqueue_style(
         'dermaforyou-child-style',
         get_stylesheet_directory_uri() . '/style.css',
         [ 'parent-style' ],
-        '1.0.1'
+        '1.1.0'
+    );
+    // CSS de la homepage y footer global — incluido en el child theme
+    // para sobrevivir actualizaciones del tema padre.
+    wp_enqueue_style(
+        'dermaforyou-homepage',
+        get_stylesheet_directory_uri() . '/homepage.css',
+        [ 'dermaforyou-child-style' ],
+        '1.1.0'
     );
 }, 20 );
 

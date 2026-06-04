@@ -4,7 +4,7 @@ Theme URI:    https://www.dermaforyou.com
 Description:  Tema hijo de The7 para dermaforyou.com — customizaciones Dra. Carmen Galera
 Author:       Dermaforyou
 Template:     dt-the7
-Version:      1.0.0
+Version:      1.1.0
 Text Domain:  dermaforyou-child
 */
 
@@ -442,77 +442,6 @@ Text Domain:  dermaforyou-child
    Añadir aquí CSS a medida que se vayan modificando otras
    secciones de la web: homepage, tratamientos, blog, etc.
    ============================================================ */
-
-/* ============================================================
-   7a. HOMEPAGE — Hero + Secciones
-   (/  →  página principal)
-   ============================================================ */
-
-/* Variables adicionales usadas en la homepage */
-.home { --deep-rose: #c03c5c; --gray: #5a5a5a; }
-
-/* Hero principal */
-.hero-content {
-  position: relative; z-index: 2;
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 120px; align-items: center;
-}
-.hero-text { max-width: 580px; }
-.hero-label {
-  display: inline-flex; align-items: center; gap: 10px;
-  font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
-  color: var(--rose); font-weight: 700; margin-bottom: 28px;
-}
-.hero-label::before {
-  content: ''; width: 8px; height: 8px; border-radius: 50%;
-  background: var(--rose); animation: glow 2s ease-in-out infinite;
-}
-@keyframes glow {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50%       { opacity: .6; transform: scale(1.3); }
-}
-.hero-subtitle {
-  font-size: 18px; color: var(--mid); line-height: 1.85;
-  margin-bottom: 44px; max-width: 500px;
-}
-.hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
-
-/* Hero visual (columna imagen) */
-.hero-visual { position: relative; display: flex; justify-content: center; align-items: center; }
-.hero-image-wrapper {
-  position: relative; width: 480px; height: 600px;
-  border-radius: 280px 280px 200px 200px;
-  overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,.1);
-}
-.hero-image-wrapper img { width: 100%; height: 100%; object-fit: cover; }
-.hero-image-frame {
-  position: absolute; inset: 0; border-radius: inherit;
-  border: 1px solid rgba(255,255,255,.5); pointer-events: none;
-}
-
-/* Etiqueta flotante en imagen */
-.hero-desc {
-  font-size: 16px; line-height: 1.8; color: var(--mid);
-  max-width: 540px; margin-bottom: 24px;
-}
-
-/* Secciones genéricas */
-.section-label {
-  display: inline-block; font-size: 11px; letter-spacing: 2.5px;
-  text-transform: uppercase; color: var(--gold); font-weight: 700;
-  margin-bottom: 20px; position: relative; padding-left: 16px;
-}
-.section-label::before {
-  content: ''; position: absolute; left: 0; top: 50%;
-  transform: translateY(-50%); width: 10px; height: 2px; background: var(--gold);
-}
-.section-title {
-  font-size: 48px; font-weight: 400; line-height: 1.2;
-  color: var(--dark); margin-bottom: 28px; letter-spacing: -.8px;
-}
-.section-title em { font-style: italic; color: var(--rose); font-weight: 500; }
-.section-text { font-size: 16px; color: var(--mid); line-height: 1.85; margin-bottom: 20px; }
-
 
 /* ============================================================
    7b. SISTEMA SKINLAYER — Hero + Secciones
