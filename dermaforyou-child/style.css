@@ -10,6 +10,106 @@ Text Domain:  dermaforyou-child
 
 
 /* ============================================================
+   0. OVERRIDE VARIABLES CSS DE THE7
+   Reemplaza los colores del preset demo (azul #1ebbf0)
+   por la paleta de Dermaforyou (rosa #c03c5c, gold #deb076).
+   Este bloque carga después del css-vars.css generado por The7
+   y lo sobreescribe por cascada.
+   ============================================================ */
+
+:root {
+  /* COLOR DE ACENTO — rose Dermaforyou en lugar de azul demo */
+  --the7-accent-color:              #c03c5c;
+  --the7-accent-bg-color:           #c03c5c;
+  --the7-accent-bg-2:               #deb076;
+  --the7-accent-bg-color-2:         135deg, #c03c5c 30%, #deb076 100%;
+  --the7-accent-bg-filter-switch:   135deg, rgba(192,60,92,0.2) 30%, rgba(222,176,118,0.2) 100%;
+  --the7-accent-bg-scroller-arrow:  135deg, rgba(192,60,92,0.9) 30%, rgba(222,176,118,0.9) 100%;
+  --the7-accent-gradient:           135deg, #c03c5c 30%, #deb076 100%;
+  --the7-accent-text-color-2:       left, #c03c5c 30%, #deb076 100%;
+
+  /* LINKS */
+  --the7-links-color: #c03c5c;
+
+  /* BOTONES */
+  --the7-btn-bg-color:              #c03c5c;
+  --the7-btn-bg-color-2:            135deg, #c03c5c 30%, #deb076 100%;
+  --the7-btn-border-color:          #c03c5c;
+  --the7-btn-border-hover-color:    #a8304c;
+  --the7-btn-hover-bg-color:        #a8304c;
+  --the7-btn-hover-bg-color-2:      135deg, #a8304c 30%, #c9924a 100%;
+
+  /* MENÚ — decoración activa */
+  --the7-menu-decor-color:          #c03c5c;
+  --the7-menu-decor-color-2:        to left, #c03c5c 30%, #deb076 100%;
+  --the7-menu-active-decor-color:   rgba(192,60,92,0.15);
+  --the7-menu-active-decor-color-2: 135deg, rgba(192,60,92,0.15) 30%, rgba(222,176,118,0.15) 100%;
+  --the7-menu-click-decor-bg-color: rgba(192,60,92,0);
+  --the7-menu-click-decor-bg-color-2: 135deg, #c03c5c 30%, #deb076 100%;
+
+  /* MENÚ MÓVIL — color activo/hover */
+  --the7-mobile-menu-active-color:   #c03c5c;
+  --the7-mobile-menu-active-color-2: left, #c03c5c 30%, #deb076 100%;
+  --the7-mobile-menu-hover-color:    #c03c5c;
+  --the7-mobile-menu-hover-color-2:  left, #c03c5c 30%, #deb076 100%;
+
+  /* SUBMENÚ — color activo/hover */
+  --the7-submenu-active-color:    #c03c5c;
+  --the7-submenu-active-color-2:  left, #c03c5c 30%, #deb076 100%;
+  --the7-submenu-active-bg:       rgba(192,60,92,0.07);
+  --the7-submenu-active-bg-2:     135deg, rgba(192,60,92,0.07) 30%, rgba(222,176,118,0.07) 100%;
+  --the7-submenu-hover-color:     #c03c5c;
+  --the7-submenu-hover-color-2:   left, #c03c5c 30%, #deb076 100%;
+  --the7-submenu-hover-bg:        rgba(192,60,92,0.07);
+  --the7-submenu-hover-bg-2:      135deg, rgba(192,60,92,0.07) 30%, rgba(222,176,118,0.07) 100%;
+
+  /* MEGAMENÚ */
+  --the7-megamenu-title-active-color:   #c03c5c;
+  --the7-megamenu-title-active-color-2: left, #c03c5c 30%, #deb076 100%;
+  --the7-megamenu-title-hover-color:    #c03c5c;
+  --the7-megamenu-title-hover-color-2:  left, #c03c5c 30%, #deb076 100%;
+
+  /* ICONOS TOP BAR */
+  --the7-top-icons-bg-color-hover:    #c03c5c;
+  --the7-top-icons-bg-color-hover-2:  135deg, #c03c5c 30%, #deb076 100%;
+
+  /* MICROWIDGETS — botones */
+  --the7-microwidget-button-bg:               #c03c5c;
+  --the7-microwidget-button-bg-2:             135deg, #c03c5c 30%, #deb076 100%;
+  --the7-microwidget-button-border-color:     #c03c5c;
+  --the7-microwidget-button-border-color-2:   135deg, #c03c5c 30%, #deb076 100%;
+  --the7-microwidget-button-hover-bg:         #c03c5c;
+  --the7-microwidget-button-hover-bg-2:       135deg, #c03c5c 30%, #deb076 100%;
+  --the7-microwidget-button-hover-border-color:   #c03c5c;
+  --the7-microwidget-button-hover-border-color-2: 135deg, #c03c5c 30%, #deb076 100%;
+  --the7-microwidget-button-2-bg:             #c03c5c;
+  --the7-microwidget-button-2-bg-2:           135deg, #c03c5c 30%, #deb076 100%;
+  --the7-microwidget-button-2-border-color:   #c03c5c;
+  --the7-microwidget-button-2-border-color-2: 135deg, #c03c5c 30%, #deb076 100%;
+  --the7-microwidget-button-2-hover-bg:       #c03c5c;
+  --the7-microwidget-button-2-hover-bg-2:     135deg, #c03c5c 30%, #deb076 100%;
+  --the7-microwidget-button-2-hover-border-color:   #c03c5c;
+  --the7-microwidget-button-2-hover-border-color-2: 135deg, #c03c5c 30%, #deb076 100%;
+
+  /* WOOCOMMERCE */
+  --the7-product-counter-bg:    #c03c5c;
+  --the7-product-counter-bg-2:  left, #c03c5c 30%, #deb076 100%;
+
+  /* ROLLOVER / PORTAFOLIO */
+  --the7-rollover-bg-color:          rgba(192,60,92,0.2);
+  --the7-rollover-bg-color-2:        135deg, rgba(192,60,92,0.2) 30%, rgba(222,176,118,0.2) 100%;
+  --the7-project-rollover-bg-color:  rgba(192,60,92,0.85);
+  --the7-project-rollover-bg-color-2: 135deg, rgba(192,60,92,0.85) 30%, rgba(222,176,118,0.85) 100%;
+
+  /* BREADCRUMBS — quitar el morado #594492 */
+  --the7-breadcrumbs-bg-color: #1A1A1A;
+
+  /* FOOTER — mantener oscuro */
+  --the7-footer-bg-color:    #1A1A1A;
+  --the7-footer-outline-color: rgba(192,60,92,0.5);
+}
+
+/* ============================================================
    ÍNDICE DE SECCIONES
    ============================================================
    1.  TOKENS GLOBALES (variables CSS)
