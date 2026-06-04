@@ -636,6 +636,16 @@ footer#footer .wf-container-footer,
 footer#footer .wf-wrap {
   background: #1A1A1A !important;
 }
+
+/* FOOTER — centrado y responsive (override del ancho fijo 1250px del tema) */
+#footer > .wf-wrap,
+#bottom-bar > .wf-wrap {
+  width: 100% !important;
+  max-width: 1250px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+}
 footer#footer .widget-title {
   color: #ffffff !important;
   font-size: 11px !important;
