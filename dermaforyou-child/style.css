@@ -4,10 +4,36 @@ Theme URI:    https://www.dermaforyou.com
 Description:  Tema hijo de The7 para dermaforyou.com — customizaciones Dra. Carmen Galera
 Author:       Dermaforyou
 Template:     dt-the7
-Version:      1.1.0
+Version:      1.2.0
 Text Domain:  dermaforyou-child
 */
 
+
+/* ============================================================
+   0a. FIXES GLOBALES DE LAYOUT — blog posts y related posts
+   ============================================================ */
+
+/* Related posts — evitar que se corten a izquierda y derecha */
+.single-related-posts,
+.single-related-posts .items-grid,
+.single-related-posts .items-grid-wrap {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  overflow: visible !important;
+}
+
+/* Navegación prev/next de posts */
+.post-navigation,
+.nav-links {
+  box-sizing: border-box !important;
+  width: 100% !important;
+}
+
+/* Contenedor principal del post — asegurar que no desborde */
+#main > .wf-wrap {
+  box-sizing: border-box !important;
+}
 
 /* ============================================================
    0. OVERRIDE VARIABLES CSS DE THE7
