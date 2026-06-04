@@ -36,22 +36,43 @@ add_action( 'wp_enqueue_scripts', function() {
 // ============================================================
 // 2. HERENCIA DE THEME MODS DEL PADRE (dt-the7)
 //
-// WordPress guarda la configuración del Customizer (logo, colores,
-// layout…) en theme_mods_{slug}. Al activar el child theme, esa clave
-// cambia a theme_mods_dermaforyou-child y queda vacía.
-// Este filtro hace que el child herede los mods del padre mientras
-// no tenga los suyos propios guardados.
+// 2a. Al activar el child theme, copiar TODOS los theme_mods del
+//     padre directamente en la BD del hijo. Así The7 encuentra sus
+//     ajustes (logo, colores, layout) aunque el stylesheet cambie.
+//     Se ejecuta una sola vez en la activación.
 // ============================================================
-add_filter( 'option_theme_mods_dermaforyou-child', function( $value ) {
+add_action( 'after_switch_theme', function() {
     $parent_mods = get_option( 'theme_mods_dt-the7', [] );
     if ( ! empty( $parent_mods ) ) {
-        if ( ! is_array( $value ) ) {
-            $value = [];
-        }
-        // Base: mods del padre. El child puede sobrescribir encima.
+        update_option( 'theme_mods_dermaforyou-child', $parent_mods );
+    }
+} );
+
+// 2b. Filtro de seguridad: en cada carga, si el child no tiene mods
+//     propios (o los tiene vacíos), hereda los del padre en memoria.
+//     Cubre el caso de que after_switch_theme no haya corrido aún.
+add_filter( 'option_theme_mods_dermaforyou-child', function( $value ) {
+    static $loading = false;
+    if ( $loading ) return $value;
+    if ( is_array( $value ) && count( $value ) > 3 ) return $value; // ya tiene mods propios
+
+    $loading = true;
+    $parent_mods = get_option( 'theme_mods_dt-the7', [] );
+    $loading = false;
+
+    if ( ! empty( $parent_mods ) ) {
+        $value = is_array( $value ) ? $value : [];
         return array_merge( $parent_mods, $value );
     }
     return $value;
+} );
+
+// 2c. Garantía explícita del logo — attachment ID 5374
+//     (logo-dermaforyou-transparente.png, subido en 2018)
+//     The7 lee el logo via get_theme_mod('custom_logo') como fallback
+//     y también via sus propios filtros 'presscore_logo_*'.
+add_filter( 'theme_mod_custom_logo', function( $val ) {
+    return $val ?: 5374;
 } );
 
 
