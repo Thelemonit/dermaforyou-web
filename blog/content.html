@@ -1,0 +1,361 @@
+<!-- wp:html -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+
+body.page-id-227 #main { padding-top: 0 !important; }
+body.page-id-227 #main > .wf-wrap,
+body.page-id-227 .wf-container-main,
+body.page-id-227 #content,
+body.page-id-227 .content,
+body.page-id-227 .entry-content,
+body.page-id-227 .post-content,
+body.page-id-227 article.page {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+body.page-id-227 .page-title-bar,
+body.page-id-227 h1.entry-title,
+body.page-id-227 .breadcrumbs { display: none !important; }
+
+.dfy-blog {
+  --rose: #c03c5c;
+  --rose-dark: #8f2940;
+  --gold: #deb076;
+  --cream: #FBF8F5;
+  --blush: #FDF5F7;
+  --clinical: #f7f5f2;
+  --dark: #1A1A1A;
+  --text: #3D3D3D;
+  --muted: #777;
+  --line: #e8e1dc;
+  --shadow: 0 24px 80px rgba(26, 26, 26, .08);
+  font-family: 'Inter', Arial, sans-serif;
+  color: var(--text);
+  background: #fff;
+  line-height: 1.65;
+}
+.dfy-blog *, .dfy-blog *::before, .dfy-blog *::after { box-sizing: border-box; }
+.dfy-blog a { color: inherit; text-decoration: none; }
+.dfy-blog img { display: block; width: 100%; height: auto; }
+.dfy-blog-container { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+.dfy-blog-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--rose);
+}
+.dfy-blog-eyebrow::before { content: ''; width: 26px; height: 1px; background: var(--gold); }
+.dfy-blog h1, .dfy-blog h2, .dfy-blog h3 {
+  font-family: 'Lora', Georgia, serif !important;
+  color: var(--dark) !important;
+  line-height: 1.15 !important;
+  font-weight: 400 !important;
+  margin: 0 !important;
+}
+.dfy-blog-lead { color: var(--muted); font-size: 17px; line-height: 1.8; margin: 24px 0 34px; }
+.dfy-blog-meta {
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
+}
+.dfy-blog-tag {
+  display: inline-flex;
+  width: fit-content;
+  padding: 5px 9px;
+  border: 1px solid rgba(222,176,118,.58);
+  color: var(--rose);
+  background: rgba(251,248,245,.78);
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+.dfy-blog-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  color: var(--rose) !important;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.dfy-blog-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--rose);
+  color: #fff !important;
+  padding: 14px 28px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.dfy-blog-btn:hover { background: var(--rose-dark); color: #fff !important; }
+.dfy-blog-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  color: var(--dark) !important;
+  padding: 13px 24px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.dfy-blog-hero {
+  padding: 92px 0 76px;
+  background: linear-gradient(135deg, #FAFAF8 0%, #FDF5F7 54%, #FEF8F5 100%);
+  border-bottom: 1px solid var(--line);
+}
+.dfy-blog-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(420px, 1.1fr);
+  gap: 64px;
+  align-items: end;
+}
+.dfy-blog-hero h1 { font-size: clamp(44px, 6vw, 70px) !important; letter-spacing: -1px !important; }
+.dfy-blog-hero h1 em { color: var(--rose); font-style: italic; }
+.dfy-blog-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.dfy-blog-feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+.dfy-blog-feature img { height: 470px; object-fit: cover; }
+.dfy-blog-feature-copy { padding: 42px; display: flex; flex-direction: column; gap: 18px; }
+.dfy-blog-feature-copy h2 { font-size: 38px !important; }
+.dfy-blog-feature-copy p { color: var(--muted); margin: 0; font-size: 15px; }
+.dfy-blog-filter { padding: 26px 0; border-bottom: 1px solid var(--line); background: #fff; }
+.dfy-blog-filter-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.dfy-blog-filter-row a {
+  padding: 9px 14px;
+  border: 1px solid var(--line);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted) !important;
+}
+.dfy-blog-filter-row a.is-active,
+.dfy-blog-filter-row a:hover {
+  color: var(--rose) !important;
+  background: var(--blush);
+  border-color: rgba(192,60,92,.24);
+}
+.dfy-blog-grid { padding: 70px 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.dfy-blog-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.dfy-blog-card:hover { box-shadow: var(--shadow); transform: translateY(-3px); transition: all .24s ease; }
+.dfy-blog-card img { aspect-ratio: 4 / 3; object-fit: cover; }
+.dfy-blog-card-body { padding: 24px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
+.dfy-blog-card h3 { font-size: 24px !important; }
+.dfy-blog-card p { margin: 0; color: var(--muted); font-size: 14px; }
+.dfy-blog-cta {
+  margin-top: 88px;
+  padding: 72px 0;
+  background: linear-gradient(135deg, var(--cream) 0%, var(--blush) 100%);
+  color: var(--dark);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.dfy-blog-cta-grid { display: grid; grid-template-columns: 1.3fr .7fr; gap: 48px; align-items: center; }
+.dfy-blog-cta h2 { font-size: 42px !important; }
+.dfy-blog-cta p { color: var(--muted); margin: 16px 0 0; max-width: 620px; }
+.dfy-blog-cta .dfy-blog-btn { justify-self: end; }
+.dfy-blog-loading { grid-column: 1 / -1; color: var(--muted); text-align: center; padding: 40px 0; }
+
+@media (max-width: 1050px) {
+  .dfy-blog-hero-grid,
+  .dfy-blog-feature,
+  .dfy-blog-cta-grid { grid-template-columns: 1fr; }
+  .dfy-blog-grid { grid-template-columns: 1fr 1fr; }
+  .dfy-blog-cta .dfy-blog-btn { justify-self: start; }
+}
+@media (max-width: 700px) {
+  .dfy-blog-container { padding: 0 20px; }
+  .dfy-blog-hero { padding: 64px 0 48px; }
+  .dfy-blog-hero-grid { gap: 34px; }
+  .dfy-blog-feature-copy { padding: 28px; }
+  .dfy-blog-feature img { height: 320px; }
+  .dfy-blog-grid { grid-template-columns: 1fr; padding-top: 46px; }
+  .dfy-blog-cta h2 { font-size: 32px !important; }
+}
+</style>
+
+<section class="dfy-blog">
+  <div class="dfy-blog-hero">
+    <div class="dfy-blog-container dfy-blog-hero-grid">
+      <div>
+        <span class="dfy-blog-eyebrow">Dermatología · Cosmética · Estética</span>
+        <h1>Blog médico para entender <em>tu piel</em></h1>
+        <p class="dfy-blog-lead">Consejos, criterio dermatológico y guías prácticas de la Dra. Carmen Galera para cuidar tu piel con rigor médico.</p>
+        <div class="dfy-blog-actions">
+          <a class="dfy-blog-btn" href="#dfy-blog-articles">Leer últimos artículos</a>
+          <a class="dfy-blog-btn-outline" href="#dfy-blog-categories">Explorar categorías</a>
+        </div>
+      </div>
+      <article class="dfy-blog-feature" id="dfy-blog-feature">
+        <img src="https://www.dermaforyou.com/wp-content/uploads/2026/06/lo-que-una-dermatologa-nunca-haria-con-su-cara-dermaforyou-scaled.avif" alt="Tratamientos que jamás recomendaría a mis pacientes">
+        <div class="dfy-blog-feature-copy">
+          <span class="dfy-blog-tag">Nuevo artículo</span>
+          <span class="dfy-blog-meta">4 junio 2026</span>
+          <h2>Tratamientos que jamás recomendaría a mis pacientes</h2>
+          <p>Una lectura directa, con criterio médico, sobre decisiones estéticas que conviene evitar aunque estén de moda.</p>
+          <a class="dfy-blog-link" href="https://www.dermaforyou.com/tratamientos-esteticos-que-no-recomiendo/">Leer artículo -></a>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="dfy-blog-filter" id="dfy-blog-categories">
+    <div class="dfy-blog-container dfy-blog-filter-row">
+      <a class="is-active" href="https://www.dermaforyou.com/blog/">Ver todo</a>
+      <a href="https://www.dermaforyou.com/blog/?term=2">Dermatología</a>
+      <a href="https://www.dermaforyou.com/blog/?term=333">Cosmética</a>
+      <a href="https://www.dermaforyou.com/blog/?term=338">Estética</a>
+      <a href="https://www.dermaforyou.com/blog/?term=346">#JuevesDeCremas</a>
+    </div>
+  </div>
+
+  <div class="dfy-blog-container">
+    <div class="dfy-blog-grid" id="dfy-blog-articles" aria-live="polite">
+      <article class="dfy-blog-card">
+        <img src="https://www.dermaforyou.com/wp-content/uploads/2024/05/factores-a-tener-en-cuenta-para-elegir-un-buen-fotoprotector-solar-dermaforyou-scaled.jpeg" alt="Fotoprotector solar">
+        <div class="dfy-blog-card-body"><span class="dfy-blog-meta">28 mayo 2026</span><h3>Por qué el protector solar no te protege aunque lo uses todos los días</h3><p>El error más común no es olvidárselo: es aplicar demasiado poco.</p><a class="dfy-blog-link" href="https://www.dermaforyou.com/error-comun-protector-solar-cantidad-aplicada/">Detalles -></a></div>
+      </article>
+      <article class="dfy-blog-card">
+        <img src="https://www.dermaforyou.com/wp-content/uploads/2026/05/como-saber-si-un-cosmetico-funciona-dermaforyou-scaled.avif" alt="Cosmético en la piel">
+        <div class="dfy-blog-card-body"><span class="dfy-blog-meta">21 mayo 2026</span><h3>Cómo saber si un cosmético realmente funciona</h3><p>Una guía para separar promesas, ingredientes y resultados reales.</p><a class="dfy-blog-link" href="https://www.dermaforyou.com/como-saber-si-un-cosmetico-funciona/">Detalles -></a></div>
+      </article>
+      <article class="dfy-blog-card">
+        <img src="https://www.dermaforyou.com/wp-content/uploads/2026/05/Flacidez-facial-tu-edad-no-es-el-enemigo-dermaforyou-scaled.avif" alt="Flacidez facial">
+        <div class="dfy-blog-card-body"><span class="dfy-blog-meta">7 mayo 2026</span><h3>Flacidez facial: Por qué tu edad no es el enemigo</h3><p>La estructura facial, el colágeno y la estrategia importan más que los años.</p><a class="dfy-blog-link" href="https://www.dermaforyou.com/flacidez-facial-por-que-tu-edad-no-es-el-enemigo/">Detalles -></a></div>
+      </article>
+      <article class="dfy-blog-card">
+        <img src="https://www.dermaforyou.com/wp-content/uploads/2026/04/estres-y-piel-dermaforyou-scaled.avif" alt="Estrés y piel">
+        <div class="dfy-blog-card-body"><span class="dfy-blog-meta">23 abril 2026</span><h3>Tu piel refleja tu estrés</h3><p>Cómo el cansancio y el estrés modifican la piel y cómo recuperar equilibrio.</p><a class="dfy-blog-link" href="https://www.dermaforyou.com/tu-piel-refleja-tu-estres/">Detalles -></a></div>
+      </article>
+      <article class="dfy-blog-card">
+        <img src="https://www.dermaforyou.com/wp-content/uploads/2026/04/ftriangulo-armonico-para-lacidez-facial-dermaforyou-scaled.avif" alt="Triángulo Armónico">
+        <div class="dfy-blog-card-body"><span class="dfy-blog-meta">16 abril 2026</span><h3>Cómo el Triángulo Armónico devuelve firmeza</h3><p>Un enfoque para restaurar arquitectura facial sin añadir volumen artificial.</p><a class="dfy-blog-link" href="https://www.dermaforyou.com/flacidez-facial-triangulo-armonico/">Detalles -></a></div>
+      </article>
+      <article class="dfy-blog-card">
+        <img src="https://www.dermaforyou.com/wp-content/uploads/2022/03/6-cosas-sobre-el-melasma-que-seguro-no-sabias-dermaforyou-scaled.jpg" alt="Melasma">
+        <div class="dfy-blog-card-body"><span class="dfy-blog-meta">19 marzo 2026</span><h3>Melasma: 10 curiosidades que debes conocer</h3><p>Por qué aparece, cómo tratarlo y qué errores pueden empeorarlo.</p><a class="dfy-blog-link" href="https://www.dermaforyou.com/melasma-10-curiosidades/">Detalles -></a></div>
+      </article>
+    </div>
+  </div>
+
+  <div class="dfy-blog-cta">
+    <div class="dfy-blog-container dfy-blog-cta-grid">
+      <div>
+        <span class="dfy-blog-eyebrow">Consulta dermatológica</span>
+        <h2>Convierte la lectura en diagnóstico personalizado</h2>
+        <p>Después del contenido, la página invita a pasar de la información general a una consulta médica adaptada a tu piel.</p>
+      </div>
+      <a class="dfy-blog-btn" href="https://www.dermaforyou.com/consulta-dermatologica-online/">Pedir cita</a>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  document.body.classList.remove('slideshow-on');
+  document.querySelectorAll('#main-slideshow, rs-module-wrap, rs-module, sr7-module, sr7-module-wrap, .rs-module-wrap, .rev_slider_wrapper').forEach(function (node) {
+    node.remove();
+  });
+  document.querySelectorAll('link[href*="/revslider/"], script[src*="/revslider/"], link[id*="sr7"], script[id*="sr7"], script[id*="tp-tools"]').forEach(function (node) {
+    node.remove();
+  });
+
+  var feature = document.getElementById('dfy-blog-feature');
+  var grid = document.getElementById('dfy-blog-articles');
+  if (!feature || !grid || !window.fetch) return;
+
+  function strip(html) {
+    var div = document.createElement('div');
+    div.innerHTML = html || '';
+    return (div.textContent || div.innerText || '').trim();
+  }
+
+  function formatDate(value) {
+    try {
+      return new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(value));
+    } catch (e) {
+      return '';
+    }
+  }
+
+  function imageOf(post) {
+    try { return post._embedded['wp:featuredmedia'][0].source_url; } catch (e) { return ''; }
+  }
+
+  function termsOf(post) {
+    try {
+      var groups = post._embedded['wp:term'] || [];
+      var terms = groups.reduce(function (all, group) { return all.concat(group); }, []);
+      return (terms[0] && terms[0].name) || 'Artículo';
+    } catch (e) {
+      return 'Artículo';
+    }
+  }
+
+  function excerptOf(post) {
+    var text = strip(post.excerpt && post.excerpt.rendered);
+    if (!text) return '';
+    return text.length > 150 ? text.slice(0, 147).trim() + '...' : text;
+  }
+
+  function card(post) {
+    var img = imageOf(post);
+    return '<article class="dfy-blog-card">' +
+      (img ? '<img src="' + img + '" alt="' + strip(post.title.rendered).replace(/"/g, '&quot;') + '">' : '') +
+      '<div class="dfy-blog-card-body">' +
+      '<span class="dfy-blog-meta">' + formatDate(post.date) + '</span>' +
+      '<h3>' + post.title.rendered + '</h3>' +
+      '<p>' + excerptOf(post) + '</p>' +
+      '<a class="dfy-blog-link" href="' + post.link + '">Detalles -></a>' +
+      '</div></article>';
+  }
+
+  fetch('/wp-json/wp/v2/posts?per_page=7&_embed=1', { credentials: 'same-origin' })
+    .then(function (response) { return response.ok ? response.json() : null; })
+    .then(function (posts) {
+      if (!posts || !posts.length) return;
+      var first = posts[0];
+      var firstImg = imageOf(first);
+      feature.innerHTML =
+        (firstImg ? '<img src="' + firstImg + '" alt="' + strip(first.title.rendered).replace(/"/g, '&quot;') + '">' : '') +
+        '<div class="dfy-blog-feature-copy">' +
+        '<span class="dfy-blog-tag">' + termsOf(first) + '</span>' +
+        '<span class="dfy-blog-meta">' + formatDate(first.date) + '</span>' +
+        '<h2>' + first.title.rendered + '</h2>' +
+        '<p>' + excerptOf(first) + '</p>' +
+        '<a class="dfy-blog-link" href="' + first.link + '">Leer artículo -></a>' +
+        '</div>';
+      grid.innerHTML = posts.slice(1).map(card).join('');
+    })
+    .catch(function () {});
+})();
+</script>
+<!-- /wp:html -->
