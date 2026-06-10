@@ -679,6 +679,79 @@ footer#footer a:hover {
   font-size: 12px !important;
 }
 
+/* == HEADER MENU DESKTOP ====================================== */
+@media (min-width: 1025px) {
+  .masthead.inline-header .header-bar {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  .masthead.inline-header .branding {
+    flex: 0 0 195px;
+    min-width: 0;
+    margin-left: -24px;
+    margin-right: 24px;
+  }
+
+  .masthead.inline-header .branding img {
+    width: 185px !important;
+    max-width: 185px !important;
+    height: auto;
+  }
+
+  .masthead.inline-header #primary-menu.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1 1 auto;
+    flex-wrap: nowrap !important;
+    margin-left: auto !important;
+    min-width: 0;
+  }
+
+  .masthead.inline-header #primary-menu.main-nav > li {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  .masthead.inline-header #primary-menu.main-nav > li > a {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  .masthead.inline-header .mini-widgets {
+    flex: 0 0 auto;
+    margin-left: 8px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .masthead.inline-header .branding {
+    flex-basis: 170px;
+    margin-left: -18px;
+    margin-right: 18px;
+  }
+
+  .masthead.inline-header .branding img {
+    width: 160px !important;
+    max-width: 160px !important;
+  }
+
+  .masthead.inline-header #primary-menu.main-nav > li > a {
+    padding-left: 7px !important;
+    padding-right: 7px !important;
+  }
+
+  .masthead.inline-header #primary-menu.main-nav .menu-text {
+    font-size: 12px !important;
+  }
+
+  .masthead.inline-header .mini-search {
+    display: none !important;
+  }
+}
+
 /* ══ FLACIDEZ FACIAL PAGE CSS ═══════════════════════════════════ */
 .hero-flacidez {
   background: linear-gradient(135deg, #fdf0f2 0%, #fef7f0 40%, #f9e8ea 100%) !important;
