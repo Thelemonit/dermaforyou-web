@@ -1,0 +1,980 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preview plantilla neuromoduladores | Dermaforyou</title>
+<style>
+:root {
+  --dfy-ink: #1b1718;
+  --dfy-text: #332a2d;
+  --dfy-muted: #756c6f;
+  --dfy-line: #e9e0dc;
+  --dfy-soft: #faf8f5;
+  --dfy-warm: #f4eee9;
+  --dfy-rose: #b53b5a;
+  --dfy-rose-dark: #8d2f47;
+  --dfy-gold: #caa46f;
+  --dfy-white: #ffffff;
+}
+body {
+  margin: 0;
+  background: var(--dfy-white);
+}
+.dfy-wrap * { box-sizing: border-box; margin: 0; padding: 0; }
+.dfy-wrap > p,
+.dfy-wrap > br {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 0 !important;
+  line-height: 0 !important;
+}
+.dfy-wrap > div {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.dfy-wrap {
+  font-family: 'Georgia', serif;
+  color: var(--dfy-ink);
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  background: var(--dfy-white);
+  overflow: hidden;
+}
+
+/* HERO */
+.dfy-hero {
+  position: relative;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(27, 23, 24, 0.82) 0%, rgba(27, 23, 24, 0.64) 42%, rgba(27, 23, 24, 0.16) 74%),
+    url("https://www.dermaforyou.com/wp-content/uploads/2020/01/slider-dra-carmen-galera-dermaforyou-scaled.jpg") center top / cover no-repeat;
+}
+.dfy-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(27,23,24,.08), rgba(27,23,24,.18));
+}
+.dfy-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 5rem 4rem;
+  max-width: 620px;
+}
+.dfy-hero-eyebrow {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: var(--dfy-gold);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+.dfy-hero h1 {
+  font-size: 52px;
+  font-weight: 300;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 0.4rem;
+}
+.dfy-hero-sub {
+  font-size: 18px;
+  color: rgba(255,255,255,0.86);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+.dfy-hero-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.75rem;
+}
+.dfy-hero-divider span {
+  display: block;
+  width: 48px;
+  height: 1px;
+  background: var(--dfy-gold);
+}
+.dfy-hero-divider i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--dfy-gold);
+  display: block;
+}
+.dfy-hero p {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 15px;
+  color: rgba(255,255,255,0.92);
+  line-height: 1.8;
+  max-width: 500px;
+  margin-bottom: 2.5rem;
+}
+.dfy-hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+.dfy-btn-primary {
+  background: var(--dfy-rose);
+  color: #fff;
+  border: none;
+  padding: 14px 30px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 2px;
+  text-decoration: none;
+  display: inline-block;
+}
+.dfy-btn-secondary {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.35);
+  padding: 14px 22px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* FRANJA DATOS */
+.dfy-stats {
+  background: var(--dfy-white);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  border: 1px solid var(--dfy-line);
+  border-top: none;
+}
+.dfy-stat {
+  padding: 1.5rem;
+  text-align: center;
+  border-right: 1px solid var(--dfy-line);
+}
+.dfy-stat:last-child { border-right: none; }
+.dfy-stat-num {
+  font-size: 26px;
+  font-weight: 300;
+  color: var(--dfy-ink);
+  display: block;
+  line-height: 1.05;
+  margin-bottom: 8px;
+}
+.dfy-stat-num + br { display: none !important; }
+.dfy-stat-label {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 10px;
+  color: var(--dfy-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: block;
+  line-height: 1.2;
+}
+
+/* SECCIONES GENERALES */
+.dfy-section { padding: 3.5rem 3rem; }
+.dfy-section-alt { padding: 3.5rem 3rem; background: var(--dfy-soft); }
+.dfy-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--dfy-line);
+}
+.dfy-col { padding: 3rem; }
+.dfy-col-alt { padding: 3rem; background: var(--dfy-soft); }
+.dfy-col:not(:last-child),
+.dfy-col-alt:not(:last-child) {
+  border-right: 1px solid var(--dfy-line);
+}
+.dfy-tag {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--dfy-rose);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+.dfy-tag + br,
+.dfy-rule + p {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 0 !important;
+  line-height: 0 !important;
+}
+.dfy-rule {
+  width: 36px;
+  height: 2px;
+  background: var(--dfy-gold);
+  display: block;
+  margin: 0.25rem 0 0.9rem;
+}
+.dfy-wrap h2 {
+  font-size: 26px;
+  font-weight: 300;
+  color: var(--dfy-ink);
+  line-height: 1.3;
+  margin-bottom: 1.1rem;
+}
+.dfy-wrap h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--dfy-ink);
+  margin-bottom: 0.3rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+.dfy-wrap p {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 14px;
+  color: var(--dfy-text);
+  line-height: 1.9;
+  margin-bottom: 0.9rem;
+}
+.dfy-wrap p:last-child { margin-bottom: 0; }
+.dfy-hero .dfy-hero-sub { color: rgba(255,255,255,0.86); }
+.dfy-hero .dfy-hero-content p:not(.dfy-hero-sub) { color: rgba(255,255,255,0.92); }
+
+/* CAJA DEFINICIÓN */
+.dfy-definition {
+  background: var(--dfy-soft);
+  border-left: 3px solid var(--dfy-gold);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+  border-radius: 0 8px 8px 0;
+}
+.dfy-definition p { font-style: italic; color: #1e1014; margin: 0; }
+
+/* PASOS */
+.dfy-steps { display: flex; flex-direction: column; gap: 1.1rem; }
+.dfy-step { display: flex; gap: 14px; align-items: flex-start; }
+.dfy-step-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--dfy-ink);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.dfy-step-num.gold { background: var(--dfy-gold); }
+.dfy-step-text h3 { margin-bottom: 3px; }
+.dfy-step-text p { margin: 0; font-size: 13px; }
+
+/* SEPARADOR FILOSOFÍA */
+.dfy-philosophy {
+  background: var(--dfy-warm);
+  padding: 2.75rem 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+}
+.dfy-philosophy-quote {
+  flex: 0 1 520px;
+}
+.dfy-philosophy-eyebrow {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--dfy-rose-dark);
+  text-transform: uppercase;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.dfy-philosophy blockquote {
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--dfy-ink);
+  line-height: 1.4;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+}
+.dfy-philosophy blockquote p {
+  font: inherit;
+  color: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+.dfy-philosophy p:empty { display: none; }
+.dfy-philosophy-divider {
+  width: 1px;
+  background: var(--dfy-line);
+  align-self: stretch;
+  flex-shrink: 0;
+}
+.dfy-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  flex: 0 1 320px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.dfy-checklist li {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 13px;
+  color: var(--dfy-text);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.dfy-checklist li::before {
+  content: '✓';
+  color: var(--dfy-rose);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* ZONAS GRID */
+.dfy-zones-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 1.25rem;
+}
+.dfy-zone {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 0.85rem 1rem;
+  background: #fff;
+  border: 1px solid var(--dfy-line);
+  border-radius: 8px;
+}
+.dfy-zone-arrow {
+  color: var(--dfy-gold);
+  font-size: 14px;
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+.dfy-zone h3 { font-size: 13px; margin-bottom: 2px; }
+.dfy-zone p { font-size: 11px; color: #7a5060; margin: 0; line-height: 1.25; }
+
+/* NOTA CLÍNICA */
+.dfy-nota {
+  background: #fff;
+  border: 1px solid var(--dfy-line);
+  border-radius: 8px;
+  padding: 1.15rem;
+  margin-top: 1.25rem;
+}
+.dfy-nota-title {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--dfy-rose);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+.dfy-nota p { font-size: 13px; margin: 0; }
+
+/* CARRUSEL */
+.dfy-results {
+  background: var(--dfy-white);
+  border-top: 1px solid var(--dfy-line);
+}
+.dfy-section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 2rem;
+  margin-bottom: 1.25rem;
+}
+.dfy-section-head p {
+  max-width: 520px;
+  color: var(--dfy-muted);
+  margin: 0;
+}
+.dfy-carousel {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  margin-top: 1.4rem;
+}
+.dfy-carousel-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--dfy-line);
+  background: var(--dfy-white);
+  color: var(--dfy-ink);
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(27, 23, 24, 0.08);
+}
+.dfy-carousel-btn:hover { border-color: var(--dfy-gold); color: var(--dfy-rose-dark); }
+.dfy-carousel-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(720px, 86%);
+  gap: 18px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 4px 4px 18px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--dfy-gold) var(--dfy-soft);
+}
+.dfy-gallery-item {
+  scroll-snap-align: center;
+  overflow: hidden;
+  background: var(--dfy-soft);
+  border: 1px solid var(--dfy-line);
+  box-shadow: 0 16px 42px rgba(27, 23, 24, 0.07);
+}
+.dfy-gallery-item img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+.dfy-gallery-item:nth-child(1) img,
+.dfy-gallery-item:nth-child(2) img,
+.dfy-gallery-item:nth-child(3) img {
+  object-fit: contain;
+  object-position: center;
+  background: #fff;
+}
+.dfy-gallery-caption {
+  padding: 1.1rem 1.2rem 1.2rem;
+  background: var(--dfy-white);
+}
+.dfy-gallery-caption h3 {
+  font-size: 14px;
+  letter-spacing: 0.02em;
+}
+.dfy-gallery-caption p {
+  color: var(--dfy-muted);
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* FAQ */
+.dfy-faq-section {
+  background: var(--dfy-soft);
+  padding: 3.5rem 3rem;
+  border-top: 1px solid var(--dfy-line);
+}
+.dfy-faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+.dfy-faq-item {
+  background: #fff;
+  border: 1px solid var(--dfy-line);
+  border-radius: 8px;
+  padding: 1.2rem 1.4rem;
+}
+.dfy-faq-item h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--dfy-ink);
+  margin-bottom: 0.5rem;
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+  font-family: 'Segoe UI', sans-serif;
+}
+.dfy-faq-item h3::before {
+  content: '✓';
+  color: var(--dfy-gold);
+  font-size: 15px;
+  flex-shrink: 0;
+}
+.dfy-faq-item p {
+  font-size: 13px;
+  line-height: 1.85;
+  padding-left: 22px;
+  margin: 0;
+}
+
+/* POR QUÉ */
+.dfy-why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+.dfy-why-card {
+  padding: 1.25rem;
+  border: 1px solid var(--dfy-line);
+  border-radius: 8px;
+  border-top: 3px solid #deb076;
+}
+.dfy-why-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--dfy-gold);
+  color: var(--dfy-rose-dark);
+  display: grid;
+  place-items: center;
+  margin-bottom: 0.75rem;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+.dfy-why-card h3 { font-size: 13px; margin-bottom: 0.4rem; font-family: 'Segoe UI', sans-serif; }
+.dfy-why-card p { font-size: 12px; line-height: 1.75; margin: 0; }
+
+/* CTA FINAL */
+.dfy-cta {
+  background: var(--dfy-warm);
+  padding: 3rem 3.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 2rem;
+  border-top: 1px solid var(--dfy-line);
+}
+.dfy-cta-eyebrow {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--dfy-rose-dark);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.dfy-cta h2 {
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--dfy-ink);
+  margin-bottom: 0.3rem;
+}
+.dfy-cta p {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 13px;
+  color: var(--dfy-muted);
+  margin: 0;
+}
+.dfy-btn-cta {
+  background: var(--dfy-rose);
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 2px;
+  white-space: nowrap;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .dfy-hero {
+    min-height: 560px;
+    background:
+      linear-gradient(90deg, rgba(27, 23, 24, 0.86) 0%, rgba(27, 23, 24, 0.68) 58%, rgba(27, 23, 24, 0.22) 100%),
+      url("https://www.dermaforyou.com/wp-content/uploads/2020/01/slider-dra-carmen-galera-dermaforyou-scaled.jpg") 58% top / cover no-repeat;
+  }
+  .dfy-hero h1 { font-size: 34px; }
+  .dfy-hero-content { padding: 3rem 1.5rem; }
+  .dfy-stats { grid-template-columns: 1fr 1fr; }
+  .dfy-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.18); }
+  .dfy-grid-2 { grid-template-columns: 1fr; }
+  .dfy-col, .dfy-col-alt { border-right: none !important; border-bottom: 1px solid var(--dfy-line); }
+  .dfy-philosophy {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.1rem;
+    padding: 2.1rem 1.5rem;
+  }
+  .dfy-philosophy-quote,
+  .dfy-checklist {
+    width: 100%;
+    flex-basis: auto;
+  }
+  .dfy-philosophy blockquote {
+    font-size: 20px;
+    line-height: 1.32;
+  }
+  .dfy-checklist {
+    gap: 0.55rem;
+  }
+  .dfy-checklist li {
+    font-size: 13px;
+    line-height: 1.35;
+    align-items: flex-start;
+  }
+  .dfy-philosophy-divider { display: none; }
+  .dfy-zones-grid { grid-template-columns: 1fr; }
+  .dfy-section-head { display: block; }
+  .dfy-carousel { grid-template-columns: 1fr; }
+  .dfy-carousel-btn { display: none; }
+  .dfy-carousel-track { grid-auto-columns: 94%; }
+  .dfy-gallery-item img { aspect-ratio: 4 / 3; }
+  .dfy-faq-grid { grid-template-columns: 1fr; }
+  .dfy-why-grid { grid-template-columns: 1fr; }
+  .dfy-cta { grid-template-columns: 1fr; text-align: center; }
+  .dfy-section, .dfy-section-alt, .dfy-col, .dfy-col-alt { padding: 2rem 1.5rem; }
+}
+</style>
+
+</head>
+<body>
+<div class="dfy-wrap">
+
+  <!-- HERO -->
+  <div class="dfy-hero">
+    <div class="dfy-hero-content">
+      <span class="dfy-hero-eyebrow">Arrugas de expresión · Dermatología Estética</span>
+      <h1>Neuromodulación</h1>
+      <div class="dfy-hero-divider">
+        <span></span><i></i><span></span>
+      </div>
+      <p>El tratamiento más solicitado en dermatología estética. Reduce arrugas de expresión manteniendo tu naturalidad, con resultados visibles en 4–5 días sin cirugía ni anestesia.</p>
+      <div class="dfy-hero-btns">
+        <a href="https://www.dermaforyou.com/pide-cita-contacto/" class="dfy-btn-primary">Pide cita ahora</a>
+        <a href="#galeria" class="dfy-btn-secondary">Ver resultados ↓</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ESTADÍSTICAS -->
+  <div class="dfy-stats">
+    <div class="dfy-stat">
+      <span class="dfy-stat-num">4–6</span>
+      <span class="dfy-stat-label">meses de duración</span>
+    </div>
+    <div class="dfy-stat">
+      <span class="dfy-stat-num">4–5</span>
+      <span class="dfy-stat-label">días para ver efecto</span>
+    </div>
+    <div class="dfy-stat">
+      <span class="dfy-stat-num">Sin</span>
+      <span class="dfy-stat-label">cirugía ni anestesia</span>
+    </div>
+    <div class="dfy-stat">
+      <span class="dfy-stat-num">100%</span>
+      <span class="dfy-stat-label">resultado natural</span>
+    </div>
+  </div>
+
+  <!-- QUÉ ES + PROCEDIMIENTO -->
+  <div class="dfy-grid-2">
+    <div class="dfy-col">
+      <span class="dfy-tag">Sobre el tratamiento</span>
+      <span class="dfy-rule"></span>
+      <h2>¿Qué es la neuromodulación facial?</h2>
+      <div class="dfy-definition">
+        <p>La neuromodulación facial es un tratamiento estético que relaja selectivamente los músculos que producen arrugas de expresión, reduciendo su profundidad sin eliminar la movilidad natural del rostro ni alterar la expresividad.</p>
+      </div>
+      <p>A diferencia de los rellenos dérmicos, los neuromoduladores no añaden volumen: actúan directamente sobre la contracción muscular que genera la arruga. El resultado es una piel más lisa y descansada, con expresión completamente natural.</p>
+      <p>En Dermaforyou, en Talavera de la Reina, la Dra. Carmen Galera aplica el tratamiento con técnica de alta precisión para evitar efectos no deseados y lograr siempre un resultado armónico, adaptado a cada paciente.</p>
+    </div>
+    <div class="dfy-col-alt">
+      <span class="dfy-tag">Procedimiento</span>
+      <span class="dfy-rule"></span>
+      <h2>¿Cómo se aplica?</h2>
+      <div class="dfy-steps">
+        <div class="dfy-step">
+          <div class="dfy-step-num">1</div>
+          <div class="dfy-step-text">
+            <h3>Consulta personalizada</h3>
+            <p>Valoramos tu anatomía facial y objetivos para diseñar un plan a medida.</p>
+          </div>
+        </div>
+        <div class="dfy-step">
+          <div class="dfy-step-num">2</div>
+          <div class="dfy-step-text">
+            <h3>Aplicación con microagujas</h3>
+            <p>Inyecciones precisas sin anestesia ni cicatrices. Duración: 15–20 minutos.</p>
+          </div>
+        </div>
+        <div class="dfy-step">
+          <div class="dfy-step-num">3</div>
+          <div class="dfy-step-text">
+            <h3>Resultados en 4–5 días</h3>
+            <p>El efecto completo se aprecia entre el día 7 y el 14. Vida normal inmediata.</p>
+          </div>
+        </div>
+        <div class="dfy-step">
+          <div class="dfy-step-num gold">4</div>
+          <div class="dfy-step-text">
+            <h3>Mantenimiento cada 4–6 meses</h3>
+            <p>La musculatura se reeducan con el tiempo y los efectos duran progresivamente más.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FILOSOFÍA -->
+  <div class="dfy-philosophy">
+    <div class="dfy-philosophy-quote">
+      <span class="dfy-philosophy-eyebrow">Nuestra filosofía</span>
+      <blockquote>"El objetivo nunca es borrar quién eres.<br>Es mostrarte en tu mejor versión."</blockquote>
+    </div>
+    <div class="dfy-philosophy-divider"></div>
+    <ul class="dfy-checklist">
+      <li>Sin efecto congelado</li>
+      <li>Expresividad conservada</li>
+      <li>Resultado armónico y natural</li>
+      <li>Técnica médica especializada</li>
+    </ul>
+  </div>
+
+  <!-- ZONAS + DURACIÓN -->
+  <div class="dfy-grid-2">
+    <div class="dfy-col">
+      <span class="dfy-tag">Aplicaciones</span>
+      <span class="dfy-rule"></span>
+      <h2>¿En qué zonas se aplica la neuromodulación?</h2>
+      <p>La neuromodulación trata múltiples áreas faciales según las necesidades de cada paciente. Las más frecuentes son las arrugas dinámicas: las que aparecen o se acentúan al gesticular.</p>
+      <div class="dfy-zones-grid">
+        <div class="dfy-zone">
+          <span class="dfy-zone-arrow">→</span>
+          <div><h3>Frente</h3><p>Líneas horizontales</p></div>
+        </div>
+        <div class="dfy-zone">
+          <span class="dfy-zone-arrow">→</span>
+          <div><h3>Entrecejo</h3><p>Líneas del ceño</p></div>
+        </div>
+        <div class="dfy-zone">
+          <span class="dfy-zone-arrow">→</span>
+          <div><h3>Patas de gallo</h3><p>Zona periocular</p></div>
+        </div>
+        <div class="dfy-zone">
+          <span class="dfy-zone-arrow">→</span>
+          <div><h3>Hiperhidrosis</h3><p>Sudoración excesiva</p></div>
+        </div>
+        <div class="dfy-zone">
+          <span class="dfy-zone-arrow">→</span>
+          <div><h3>Rinotip</h3><p>Remodelado nasal</p></div>
+        </div>
+        <div class="dfy-zone">
+          <span class="dfy-zone-arrow">→</span>
+          <div><h3>Líneas periorales</h3><p>Contorno de labios</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="dfy-col-alt">
+      <span class="dfy-tag">Resultados</span>
+      <span class="dfy-rule"></span>
+      <h2>¿Cuánto duran los resultados?</h2>
+      <p>Los efectos duran habitualmente entre 4 y 6 meses, aunque en algunos pacientes puede prolongarse hasta el año. La duración depende del metabolismo individual, la zona tratada y la dosis aplicada.</p>
+      <p>Con tratamientos repetidos la musculatura se reeducan progresivamente y los efectos duran cada vez más entre sesiones.</p>
+      <div class="dfy-nota">
+        <span class="dfy-nota-title">Nota clínica</span>
+        <p>En pacientes mayores de 65 años los resultados pueden ser menos pronunciados. La Dra. Galera valorará en consulta la idoneidad y las expectativas reales para cada caso.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- GALERÍA -->
+  <div id="galeria" class="dfy-section dfy-results">
+    <div class="dfy-section-head">
+      <div>
+        <span class="dfy-tag">Resultados</span>
+        <span class="dfy-rule"></span>
+        <h2>Casos y zonas tratables</h2>
+      </div>
+    </div>
+    <div class="dfy-carousel" aria-label="Carrusel de casos de neuromodulación">
+      <button class="dfy-carousel-btn" type="button" data-carousel-prev aria-label="Ver caso anterior">‹</button>
+      <div class="dfy-carousel-track" data-carousel-track>
+        <article class="dfy-gallery-item">
+          <img src="https://www.dermaforyou.com/wp-content/uploads/2018/06/botox-arrugas-frente-dermaforyou.jpg" alt="Antes y después neuromodulación frente Talavera de la Reina">
+          <div class="dfy-gallery-caption"><h3>Frente</h3><p>Líneas horizontales por gesto repetido.</p></div>
+        </article>
+        <article class="dfy-gallery-item">
+          <img src="https://www.dermaforyou.com/wp-content/uploads/2018/06/botox-entrecejo-antes-despues-dermaforyou.jpg" alt="Antes y después neuromodulación entrecejo Talavera de la Reina">
+          <div class="dfy-gallery-caption"><h3>Entrecejo</h3><p>Gesto de enfado, tensión o cansancio.</p></div>
+        </article>
+        <article class="dfy-gallery-item">
+          <img src="https://www.dermaforyou.com/wp-content/uploads/2018/06/botox-patas-gallo-dermaforyou.jpg" alt="Antes y después neuromodulación patas de gallo Talavera de la Reina">
+          <div class="dfy-gallery-caption"><h3>Patas de gallo</h3><p>Zona periocular manteniendo sonrisa natural.</p></div>
+        </article>
+        <article class="dfy-gallery-item">
+          <img src="https://www.dermaforyou.com/wp-content/uploads/2020/08/botox-acido-hialuronico-para-mejorar-el-surco-nasogeniano-dermaforyou-scaled.jpg" alt="Tratamiento neuromodulación combinado Dermaforyou Talavera">
+          <div class="dfy-gallery-caption"><h3>Plan facial</h3><p>Puede combinarse con otros tratamientos si el caso lo requiere.</p></div>
+        </article>
+      </div>
+      <button class="dfy-carousel-btn" type="button" data-carousel-next aria-label="Ver caso siguiente">›</button>
+    </div>
+  </div>
+
+  <!-- FAQ AEO -->
+  <div class="dfy-faq-section">
+    <span class="dfy-tag">Preguntas frecuentes</span>
+    <span class="dfy-rule"></span>
+    <h2>Lo que más nos preguntan sobre la neuromodulación en Talavera de la Reina</h2>
+    <div class="dfy-faq-grid">
+      <div class="dfy-faq-item">
+        <h3>¿Duele la neuromodulación?</h3>
+        <p>No. Se aplica con microagujas muy finas y la molestia es mínima, comparable a un leve pinchazo. No requiere anestesia local ni tiempo de recuperación posterior.</p>
+      </div>
+      <div class="dfy-faq-item">
+        <h3>¿Es lo mismo que el bótox?</h3>
+        <p>Sí. El bótox es la marca comercial más conocida, pero la neuromodulación incluye diferentes marcas y fórmulas de toxina botulínica con el mismo mecanismo de acción y resultados equivalentes.</p>
+      </div>
+      <div class="dfy-faq-item">
+        <h3>¿Cuándo se ven los resultados?</h3>
+        <p>Los primeros efectos aparecen entre el 3.º y el 5.º día. El resultado completo se establece entre el 7.º y el 14.º día tras el tratamiento.</p>
+      </div>
+      <div class="dfy-faq-item">
+        <h3>¿Puedo hacer vida normal después?</h3>
+        <p>Sí, inmediatamente. No requiere baja laboral. Solo se recomienda evitar ejercicio intenso, calor directo y tumbarse las primeras 4 horas tras la sesión.</p>
+      </div>
+      <div class="dfy-faq-item">
+        <h3>¿Con qué frecuencia hay que repetirlo?</h3>
+        <p>Se recomienda repetir cada 4–6 meses para mantener el resultado. Con el tiempo la musculatura se reeducan y los efectos duran progresivamente más entre sesiones.</p>
+      </div>
+      <div class="dfy-faq-item">
+        <h3>¿Tiene efectos secundarios?</h3>
+        <p>Son raros y transitorios. Puede aparecer un leve eritema o pequeño hematoma en el punto de inyección. Con una técnica correcta los efectos no deseados graves son prácticamente inexistentes.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- POR QUÉ ELEGIRNOS -->
+  <div class="dfy-section">
+    <span class="dfy-tag">Por qué Dermaforyou</span>
+    <span class="dfy-rule"></span>
+    <h2>Experiencia, precisión y naturalidad en Talavera de la Reina</h2>
+    <div class="dfy-why-grid">
+      <div class="dfy-why-card">
+        <span class="dfy-why-icon">01</span>
+        <h3>Especialista en dermatología</h3>
+        <p>La Dra. Carmen Galera combina formación médica y estética para garantizar resultados seguros y naturales.</p>
+      </div>
+      <div class="dfy-why-card">
+        <span class="dfy-why-icon">02</span>
+        <h3>Técnica de alta precisión</h3>
+        <p>Mapeado facial individualizado para colocar cada inyección exactamente donde produce el mejor resultado.</p>
+      </div>
+      <div class="dfy-why-card">
+        <span class="dfy-why-icon">03</span>
+        <h3>Filosofía natural</h3>
+        <p>Nunca el efecto "congelado". Buscamos siempre la mejor versión de ti, respetando tu identidad y expresividad.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA FINAL -->
+  <div id="contacto" class="dfy-cta">
+    <div>
+      <span class="dfy-cta-eyebrow">Pide tu cita en Talavera de la Reina</span>
+      <h2>Dermaforyou · Dra Carmen Galera</h2>
+      <p>925 68 48 98 / 601 370 561 · Avda. Constitución 8 · Lun–Vie 9:30–20:30</p>
+    </div>
+    <a href="https://www.dermaforyou.com/pide-cita-contacto/" class="dfy-btn-cta">Reservar consulta</a>
+  </div>
+
+</div>
+
+<!-- SCHEMA FAQ — AEO (pegar en el <head> o con un plugin de schema) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Duele la neuromodulación?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Se aplica con microagujas muy finas y la molestia es mínima, comparable a un leve pinchazo. No requiere anestesia local ni tiempo de recuperación posterior."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Es lo mismo que el bótox?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. El bótox es la marca comercial más conocida, pero la neuromodulación incluye diferentes marcas y fórmulas de toxina botulínica con el mismo mecanismo de acción y resultados equivalentes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuándo se ven los resultados de la neuromodulación?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Los primeros efectos aparecen entre el 3.º y el 5.º día. El resultado completo se establece entre el 7.º y el 14.º día tras el tratamiento."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo hacer vida normal después de la neuromodulación?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, inmediatamente. No requiere baja laboral. Solo se recomienda evitar ejercicio intenso, calor directo y tumbarse las primeras 4 horas tras la sesión."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Con qué frecuencia hay que repetir la neuromodulación?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Se recomienda repetir cada 4–6 meses para mantener el resultado. Con el tiempo la musculatura se reeducan y los efectos duran progresivamente más entre sesiones."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Tiene efectos secundarios la neuromodulación?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Son raros y transitorios. Puede aparecer un leve eritema o pequeño hematoma en el punto de inyección. Con una técnica correcta los efectos no deseados graves son prácticamente inexistentes."
+      }
+    }
+  ]
+}
+</script>
+<script>
+  (function () {
+    document.querySelectorAll('link[href*="/revslider/"], script[src*="/revslider/"], link[id*="sr7"], script[id*="sr7"], script[id*="tp-tools"], sr7-module, rs-module-wrap').forEach(function (node) {
+      node.remove();
+    });
+
+    const track = document.querySelector('[data-carousel-track]');
+    const prev = document.querySelector('[data-carousel-prev]');
+    const next = document.querySelector('[data-carousel-next]');
+    if (!track || !prev || !next) return;
+
+    const scrollByCard = (direction) => {
+      const card = track.querySelector('.dfy-gallery-item');
+      const gap = 18;
+      const amount = card ? card.getBoundingClientRect().width + gap : track.clientWidth * 0.8;
+      track.scrollBy({ left: direction * amount, behavior: 'smooth' });
+    };
+
+    prev.addEventListener('click', () => scrollByCard(-1));
+    next.addEventListener('click', () => scrollByCard(1));
+  })();
+</script>
+</body>
+</html>
